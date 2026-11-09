@@ -1,15 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Cormorant_Garamond, Karla } from "next/font/google";
 import "./globals.css";
 import { SITE, siteUrl } from "@/config/site";
 import { CookieBanner } from "@/components/analytics/cookie-banner";
 import { Analytics } from "@/components/analytics/analytics";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const fraunces = Fraunces({
+const karla = Karla({ subsets: ["latin"], variable: "--font-karla", display: "swap" });
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
-  variable: "--font-fraunces",
+  variable: "--font-cormorant",
   display: "swap",
 });
 
@@ -30,13 +31,13 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FDF8FB",
+  themeColor: "#F6F0E6",
   colorScheme: "light",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="en" className={`${karla.variable} ${cormorant.variable}`}>
       <body className="min-h-dvh font-sans antialiased">
         {children}
         <CookieBanner />

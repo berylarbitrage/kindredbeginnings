@@ -21,8 +21,10 @@ export default async function ResultPage({
     <div className="mx-auto max-w-2xl px-4 py-16 text-center">
       {eligible ? (
         <>
-          <CheckCircle2 className="text-primary mx-auto size-14" aria-hidden />
-          <h1 className="mt-4 text-3xl font-semibold md:text-4xl">Great news — you pre-qualify!</h1>
+          <CheckCircle2 className="text-sage-deep mx-auto size-14" strokeWidth={1.4} aria-hidden />
+          <h1 className="text-primary mt-4 text-4xl font-medium md:text-5xl">
+            Great news — you pre-qualify!
+          </h1>
           <p className="text-muted mt-4 text-lg">
             Thank you for applying. It looks like you already have an account with us, so for your
             security we&apos;ve emailed you a sign-in link to continue your full application. Your
@@ -50,8 +52,10 @@ export default async function ResultPage({
         </>
       ) : (
         <>
-          <Heart className="text-accent mx-auto size-14" aria-hidden />
-          <h1 className="mt-4 text-3xl font-semibold md:text-4xl">Thank you for your interest</h1>
+          <Heart className="text-accent mx-auto size-14" strokeWidth={1.4} aria-hidden />
+          <h1 className="text-primary mt-4 text-4xl font-medium md:text-5xl">
+            Thank you for your interest
+          </h1>
           <p className="text-muted mt-4 text-lg">
             Based on the current requirements of our partner programs, we&apos;re not able to move
             forward with your application right now. These requirements are set by medical providers

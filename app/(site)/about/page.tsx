@@ -13,14 +13,14 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <Section title={`About ${SITE.brand}`}>
-      <div className="max-w-3xl space-y-6 text-lg">
+      <div className="max-w-3xl space-y-6 text-lg leading-relaxed">
         <p>
           {SITE.brand} connects generous people with the families who need their help. We recruit
           and pre-screen egg and sperm donors, and guide them through every step of the process with
           care, honesty and respect.
         </p>
-        <h2 className="pt-4 text-2xl font-semibold">What we believe</h2>
-        <ul className="list-disc space-y-2 pl-6 text-base">
+        <h2 className="text-primary pt-4 text-3xl font-semibold italic">What we believe</h2>
+        <ul className="marker:text-accent list-disc space-y-3 pl-6 text-base leading-relaxed">
           <li>
             <strong>Informed choice.</strong> Donors deserve clear, balanced information — including
             the risks — before making any decision.
@@ -38,7 +38,7 @@ export default function AboutPage() {
             you can call or text.
           </li>
         </ul>
-        <h2 className="pt-4 text-2xl font-semibold">How we work</h2>
+        <h2 className="text-primary pt-4 text-3xl font-semibold italic">How we work</h2>
         <p className="text-base">
           We handle outreach, pre-screening, coordination and matching donors with intended-parent
           families. All medical evaluations, testing, procedures and sample handling are{" "}
@@ -48,7 +48,7 @@ export default function AboutPage() {
           <Button asChild>
             <Link href="/egg-donor">Become an Egg Donor</Link>
           </Button>
-          <Button asChild>
+          <Button asChild variant="outline">
             <Link href="/sperm-donor">Become a Sperm Donor</Link>
           </Button>
         </div>

@@ -3,16 +3,20 @@ import { SITE } from "@/config/site";
 import { LogoMark } from "@/components/brand/logo-mark";
 
 export function Logo({ showSubtitle = true }: { showSubtitle?: boolean }) {
+  const [first, ...rest] = SITE.brand.split(" ");
   return (
-    <Link href="/" className="group flex items-center gap-2" aria-label={`${SITE.brand} home`}>
-      <LogoMark className="h-9 w-11 shrink-0 transition-transform group-hover:scale-105" />
+    <Link
+      href="/"
+      className="group flex items-center gap-2.5 rounded-sm"
+      aria-label={`${SITE.brand} home`}
+    >
+      <LogoMark className="h-10 w-9 shrink-0 transition-transform duration-500 group-hover:-rotate-3" />
       <span className="flex flex-col leading-none">
-        <span className="text-primary font-serif text-xl font-medium tracking-tight italic">
-          {SITE.brand}
-          <sup className="ml-0.5 align-super text-[0.5em] not-italic">™</sup>
+        <span className="text-primary font-serif text-[1.55rem] leading-none font-semibold tracking-tight">
+          {first} <span className="text-accent font-medium italic">{rest.join(" ")}</span>
         </span>
         {showSubtitle && (
-          <span className="text-muted mt-1 hidden text-[0.6rem] font-semibold tracking-[0.22em] uppercase sm:block">
+          <span className="text-muted mt-1 hidden text-[0.62rem] font-medium tracking-[0.24em] uppercase sm:block">
             {SITE.subtitle}
           </span>
         )}

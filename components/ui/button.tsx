@@ -4,19 +4,19 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-semibold tracking-[0.01em] transition-[background-color,border-color,color,box-shadow,transform] duration-200 focus-visible:outline-2 focus-visible:outline-offset-3 disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        // CTA — accent color per design spec
+        // CTA — warm terracotta pill
         default:
-          "bg-brand text-accent-foreground shadow-lg shadow-accent/25 hover:brightness-110 hover:shadow-accent/35",
-        primary: "bg-primary text-primary-foreground hover:brightness-110",
+          "bg-accent text-accent-foreground shadow-[0_8px_20px_-10px_rgba(166,75,46,0.7)] hover:bg-accent-hover active:translate-y-px",
+        primary: "bg-primary text-primary-foreground hover:bg-[#36432f] active:translate-y-px",
         outline:
-          "border-2 border-primary/30 text-primary bg-card/60 backdrop-blur hover:border-primary hover:bg-primary-soft",
+          "border-[1.5px] border-foreground/55 text-foreground bg-transparent hover:border-accent hover:text-accent hover:bg-card/70",
         ghost: "hover:bg-muted-bg text-foreground",
         destructive: "bg-destructive text-white hover:brightness-110",
-        link: "text-primary underline-offset-4 hover:underline rounded-none",
+        link: "text-primary underline decoration-accent/60 underline-offset-4 hover:decoration-accent rounded-none",
       },
       size: {
         default: "h-11 px-6 text-sm",

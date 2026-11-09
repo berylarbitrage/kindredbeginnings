@@ -2,49 +2,58 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Brand tokens from the Good Beginnings Club logo. The site is always light,
-   regardless of the visitor's system dark-mode setting. (A .dark class is
-   kept below for possible future use but is never applied.)
-   plum #3C1860 (wordmark) · lavender #C09CD8 · peach #FCC0B4 · blush #FCD8D8 */
+/* Kindred Beginnings — warm, organic, handcrafted botanical palette.
+   The site is always light. (A .dark class is kept for possible future use
+   but is never applied.)
+   cream paper #F6F0E6 · terracotta #A64B2E · sage #7C8B6F / #44533B
+   clay #EBD9C8 · ochre #C8964A · ink brown #2F2A24 */
 :root {
   color-scheme: light;
-  --primary: #4a2172; /* plum — headings, brand, links */
-  --primary-foreground: #ffffff;
-  --accent: #7b4bb3; /* violet — CTA buttons (white text, AA contrast) */
+  --primary: #44533b; /* deep sage — headings, links, brand (7.1:1 on cream) */
+  --primary-foreground: #fbf7f0;
+  --accent: #a64b2e; /* terracotta — CTA buttons (5.7:1 with white text) */
   --accent-foreground: #ffffff;
-  --background: #fdf8fb;
-  --foreground: #2a1a38;
-  --muted: #6a5c77;
-  --muted-bg: #f6eef7;
-  --card: #ffffff;
-  --border: #eadff0;
-  --ring: #7b4bb3;
-  --destructive: #b42318;
-  --primary-soft: #f0e7fa; /* lavender wash */
-  --accent-soft: #fdebe6; /* peach wash */
-  --lavender: #c09cd8;
-  --peach: #fcc0b4;
-  --blush: #fcd8d8;
+  --accent-hover: #8c3d24;
+  --background: #f6f0e6; /* cream paper */
+  --foreground: #2f2a24; /* ink brown */
+  --muted: #645849; /* warm stone — secondary text (5.4:1 on cream) */
+  --muted-bg: #efe5d6; /* sand wash */
+  --card: #fcf8f1;
+  --border: #dccdb8;
+  --ring: #a64b2e;
+  --destructive: #a32a1c;
+  --primary-soft: #e2e6d6; /* sage wash */
+  --accent-soft: #ebd9c8; /* clay / blush wash */
+  --sage: #7c8b6f;
+  --sage-deep: #44533b;
+  --terracotta: #a64b2e;
+  --clay: #ebd9c8;
+  --ochre: #c8964a;
+  --paper: #f6f0e6;
 }
 
 .dark {
-  --primary: #d9c2f2;
-  --primary-foreground: #241035;
-  --accent: #b28be0;
-  --accent-foreground: #1d0c2c;
-  --background: #160f1d;
-  --foreground: #f3eef7;
-  --muted: #b6a9c2;
-  --muted-bg: #21172b;
-  --card: #1d1426;
-  --border: #352743;
-  --ring: #b28be0;
+  --primary: #c9d3bb;
+  --primary-foreground: #1f251b;
+  --accent: #d9805f;
+  --accent-foreground: #1d120c;
+  --accent-hover: #e39373;
+  --background: #1f1b17;
+  --foreground: #f2eadf;
+  --muted: #bfb2a0;
+  --muted-bg: #29241f;
+  --card: #26211c;
+  --border: #3d352d;
+  --ring: #d9805f;
   --destructive: #f97066;
-  --primary-soft: #2a1c3a;
-  --accent-soft: #3a2228;
-  --lavender: #8d6bb0;
-  --peach: #d98f80;
-  --blush: #b98a92;
+  --primary-soft: #2c3327;
+  --accent-soft: #3a2a21;
+  --sage: #93a285;
+  --sage-deep: #c9d3bb;
+  --terracotta: #d9805f;
+  --clay: #4a382c;
+  --ochre: #d6a85e;
+  --paper: #1f1b17;
 }
 
 @theme inline {
@@ -52,6 +61,7 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-hover: var(--accent-hover);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
@@ -62,11 +72,14 @@
   --color-destructive: var(--destructive);
   --color-primary-soft: var(--primary-soft);
   --color-accent-soft: var(--accent-soft);
-  --color-lavender: var(--lavender);
-  --color-peach: var(--peach);
-  --color-blush: var(--blush);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+  --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
+  --color-terracotta: var(--terracotta);
+  --color-clay: var(--clay);
+  --color-ochre: var(--ochre);
+  --color-paper: var(--paper);
+  --font-sans: var(--font-karla), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
 }
 
 @layer base {
@@ -77,82 +90,130 @@
     -webkit-text-size-adjust: 100%;
   }
   body {
-    background: var(--background);
+    background-color: var(--background);
     color: var(--foreground);
+    position: relative;
     overflow-x: hidden;
+    line-height: 1.7;
+  }
+  /* Paper grain: a faint fractal-noise layer over the whole document. */
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.27 0 0 0 0 0.18 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   h1,
   h2,
   h3 {
     font-family: var(--font-serif);
-    letter-spacing: -0.01em;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
   }
   :focus-visible {
     outline: 2px solid var(--ring);
-    outline-offset: 2px;
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: var(--clay);
+    color: var(--foreground);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 .prose-legal h2 {
-  @apply mt-8 mb-3 text-xl font-semibold;
+  @apply text-primary mt-10 mb-3 text-2xl font-semibold;
 }
 .prose-legal p,
 .prose-legal li {
   @apply mb-3 leading-relaxed;
 }
 .prose-legal ul {
-  @apply list-disc pl-6;
+  @apply marker:text-sage list-disc pl-6;
 }
 
-/* ---- Brand flourishes ---------------------------------------------------- */
+/* ---- Handcrafted flourishes ---------------------------------------------- */
 
-/* Primary CTA: violet → plum gradient. */
-.bg-brand {
-  background-image: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+/* Underlined text link in the brand style. */
+.link-underline {
+  text-decoration-line: underline;
+  text-decoration-color: color-mix(in oklab, var(--accent) 55%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: text-decoration-color 0.2s;
+}
+.link-underline:hover {
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
 }
 
-/* Hero / section wash: soft lavender + peach glows, like the logo. */
-.bg-glow {
-  background:
-    radial-gradient(
-      45rem 30rem at 85% 10%,
-      color-mix(in oklab, var(--lavender) 35%, transparent),
-      transparent 70%
-    ),
-    radial-gradient(
-      40rem 28rem at 10% 90%,
-      color-mix(in oklab, var(--peach) 35%, transparent),
-      transparent 70%
-    ),
-    var(--background);
+/* Thin hand-drawn wavy rule between sections. */
+.divider-wave {
+  height: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='14' viewBox='0 0 56 14'%3E%3Cpath d='M0 7 C 7 1.5, 14 1.5, 21 7 S 35 12.5, 42 7 S 52 2, 56 7' fill='none' stroke='%237C8B6F' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E")
+    repeat-x center / 56px 14px;
 }
 
-/* Gradient text for emphasised words in headlines. */
-.text-brand-gradient {
-  background-image: linear-gradient(100deg, var(--accent) 10%, #c06c9a 55%, #e8907c 95%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+/* Vertical dashed, gently winding vine (timeline connector). */
+.vine-line {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='40' viewBox='0 0 12 40'%3E%3Cpath d='M6 0 C 11 10, 1 30, 6 40' fill='none' stroke='%237C8B6F' stroke-width='1.4' stroke-dasharray='3 4'/%3E%3C/svg%3E")
+    repeat-y center top / 12px 40px;
 }
 
-@keyframes float-slow {
+/* Organic blob radius for washes and icon plates. */
+.blob {
+  border-radius: 58% 42% 55% 45% / 48% 56% 44% 52%;
+}
+.blob-2 {
+  border-radius: 42% 58% 38% 62% / 56% 40% 60% 44%;
+}
+
+/* Gentle botanical sway — off for reduced-motion visitors. */
+@keyframes sway {
   0%,
   100% {
-    transform: translate3d(0, 0, 0);
+    transform: rotate(-1.5deg);
   }
   50% {
-    transform: translate3d(0, -10px, 0);
+    transform: rotate(1.5deg);
   }
 }
-.animate-float {
-  animation: float-slow 7s ease-in-out infinite;
+.animate-sway {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: sway 6s ease-in-out infinite;
 }
-.animate-float-delayed {
-  animation: float-slow 8s ease-in-out -3s infinite;
+.animate-sway-delayed {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: sway 7s ease-in-out -2.5s infinite;
 }
 @media (prefers-reduced-motion: reduce) {
-  .animate-float,
-  .animate-float-delayed {
+  .animate-sway,
+  .animate-sway-delayed {
     animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
   }
 }

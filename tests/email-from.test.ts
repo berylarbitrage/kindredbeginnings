@@ -9,14 +9,14 @@ afterEach(() => {
 
 describe("sender address", () => {
   it("adds the brand as display name to a bare address", () => {
-    process.env.EMAIL_FROM = "hello@goodbeginningsclub.com";
-    expect(emailFrom()).toBe("Good Beginnings Club <hello@goodbeginningsclub.com>");
-    expect(emailFromDomain()).toBe("goodbeginningsclub.com");
+    process.env.EMAIL_FROM = "hello@kindredbeginnings.com";
+    expect(emailFrom()).toBe("Kindred Beginnings <hello@kindredbeginnings.com>");
+    expect(emailFromDomain()).toBe("kindredbeginnings.com");
   });
   it("keeps an explicit display name", () => {
-    process.env.EMAIL_FROM = "GBC Team <team@mail.goodbeginningsclub.com>";
-    expect(emailFrom()).toBe("GBC Team <team@mail.goodbeginningsclub.com>");
-    expect(emailFromDomain()).toBe("mail.goodbeginningsclub.com");
+    process.env.EMAIL_FROM = "KB Team <team@mail.kindredbeginnings.com>";
+    expect(emailFrom()).toBe("KB Team <team@mail.kindredbeginnings.com>");
+    expect(emailFromDomain()).toBe("mail.kindredbeginnings.com");
   });
   it("falls back to the Resend test sender", () => {
     expect(emailFrom()).toContain("onboarding@resend.dev");

@@ -15,17 +15,18 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="border-border bg-background/90 sticky top-0 z-40 border-b backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4">
+    <header className="bg-background/95 sticky top-0 z-40 backdrop-blur-sm">
+      <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between gap-4 px-4">
         <Logo />
-        <nav aria-label="Main" className="hidden items-center gap-4 lg:flex xl:gap-6">
+        <nav aria-label="Main" className="hidden items-center gap-5 lg:flex xl:gap-7">
           {NAV_LINKS.map((l) => (
             <Link
               key={l.href}
               href={l.href}
+              aria-current={pathname === l.href ? "page" : undefined}
               className={cn(
-                "text-foreground/80 hover:text-primary text-sm font-medium whitespace-nowrap",
-                pathname === l.href && "text-primary",
+                "text-foreground/85 hover:text-primary decoration-accent text-[0.95rem] whitespace-nowrap underline-offset-[0.4em] hover:underline",
+                pathname === l.href && "text-primary underline",
               )}
             >
               {l.label}
@@ -47,32 +48,30 @@ export function Header() {
           </Button>
         </div>
       </div>
+      <div className="divider-wave mx-auto max-w-6xl opacity-60" aria-hidden />
       {open && (
-        <nav
-          id="mobile-nav"
-          aria-label="Mobile"
-          className="border-border bg-background border-t px-4 pb-4 lg:hidden"
-        >
+        <nav id="mobile-nav" aria-label="Mobile" className="bg-background px-4 pb-6 lg:hidden">
           <ul className="flex flex-col">
             {NAV_LINKS.map((l) => (
-              <li key={l.href}>
+              <li key={l.href} className="border-border border-b border-dashed">
                 <Link
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block py-3 text-base font-medium"
+                  aria-current={pathname === l.href ? "page" : undefined}
+                  className="text-primary block py-3 font-serif text-xl font-medium"
                 >
                   {l.label}
                 </Link>
               </li>
             ))}
           </ul>
-          <div className="mt-2 grid grid-cols-2 gap-2">
+          <div className="mt-5 grid grid-cols-2 gap-2">
             <Button asChild>
               <Link href="/apply/egg" onClick={() => setOpen(false)}>
                 Apply: Egg donor
               </Link>
             </Button>
-            <Button asChild>
+            <Button asChild variant="outline">
               <Link href="/apply/sperm" onClick={() => setOpen(false)}>
                 Apply: Sperm donor
               </Link>

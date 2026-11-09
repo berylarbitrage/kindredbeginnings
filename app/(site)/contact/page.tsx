@@ -16,14 +16,14 @@ export default function ContactPage() {
       <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
         <div className="space-y-4">
           <p className="flex items-center gap-3">
-            <Mail className="text-primary size-5" aria-hidden />
-            <a href={`mailto:${SITE.contactEmail}`} className="underline">
+            <Mail className="text-sage-deep size-5" aria-hidden />
+            <a href={`mailto:${SITE.contactEmail}`} className="link-underline">
               {SITE.contactEmail}
             </a>
           </p>
           <p className="flex items-center gap-3">
-            <Phone className="text-primary size-5" aria-hidden />
-            <a href={`tel:${SITE.contactPhone.replace(/\D/g, "")}`} className="underline">
+            <Phone className="text-sage-deep size-5" aria-hidden />
+            <a href={`tel:${SITE.contactPhone.replace(/\D/g, "")}`} className="link-underline">
               {SITE.contactPhone}
             </a>
           </p>
