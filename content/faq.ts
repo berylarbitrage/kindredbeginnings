@@ -40,7 +40,7 @@ export const FAQ: Record<FaqGroup, { title: string; items: FaqItem[] }> = {
         a: `Yes. Write to ${SITE.contactEmail}. Once we've confirmed it's you, we'll delete your data, keeping only what the law requires us to hold.`,
       },
       {
-        q: "What if I change my mind?",
+        q: "May I step back if my heart changes?",
         a: "That's always yours to decide. Donation is voluntary, and you can step away from the process at any point before a procedure.",
       },
       {
@@ -65,7 +65,7 @@ export const FAQ: Record<FaqGroup, { title: string; items: FaqItem[] }> = {
         a: `Typically ${SITE.eggComp}, for your time and commitment. Medical, travel, legal and insurance costs are covered separately — you never pay out of pocket for anything related to your donation.`,
       },
       {
-        q: "Who can become an egg donor?",
+        q: "Is egg donation right for me?",
         a: `Generally someone ${egg.minAge}–${egg.maxAge} years old with a BMI under ${egg.maxBmi}, who doesn't smoke, has regular cycles and has finished at least high school.`,
       },
       {
@@ -81,7 +81,7 @@ export const FAQ: Record<FaqGroup, { title: string; items: FaqItem[] }> = {
         a: "It's done under light sedation, so most donors feel nothing during the procedure. Some cramping or bloating afterwards is common and usually settles within a few days. The clinic's physician can tell you what to expect in your case.",
       },
       {
-        q: "What are the medical risks?",
+        q: "What should I know about the risks?",
         a: "As with any medical procedure, there are some: ovarian hyperstimulation syndrome (OHSS), reactions to medication and, rarely, complications from the procedure. Partner clinics watch you closely throughout to keep risks low.",
       },
       {
@@ -93,7 +93,7 @@ export const FAQ: Record<FaqGroup, { title: string; items: FaqItem[] }> = {
         a: "A little. Most monitoring appointments are early in the morning; you'll want the retrieval day off, and possibly the day after.",
       },
       {
-        q: "Will my donation be anonymous?",
+        q: "Will my name be kept from the family?",
         a: "Usually, yes — though some intended parents ask for a known or open-ID arrangement. You'll always know which before you agree, and it will be written into your legal contract.",
       },
       {
@@ -110,7 +110,7 @@ export const FAQ: Record<FaqGroup, { title: string; items: FaqItem[] }> = {
         a: `${spermComp}. It's paid for your time and commitment once a donation is completed.`,
       },
       {
-        q: "Who can become a sperm donor?",
+        q: "Is sperm donation right for me?",
         a: `Generally someone ${sperm.minAge}–${sperm.maxAge}, at least ${Math.floor(sperm.minHeightInches / 12)}'${sperm.minHeightInches % 12}" tall, who doesn't smoke and is in college or has graduated.`,
       },
       {
@@ -118,15 +118,15 @@ export const FAQ: Record<FaqGroup, { title: string; items: FaqItem[] }> = {
         a: "Much like egg donation with an agency. You complete a short pre-screen and a full application, talk with a coordinator, and once you're approved your profile joins our donor database. When a family chooses you, a partner clinic arranges screening and collection.",
       },
       {
-        q: "How long until I'm matched?",
+        q: "How long might I wait to be matched?",
         a: "It varies. Some donors are matched within a few weeks of approval; for others it takes several months, depending on what families are hoping for. Your coordinator will keep you posted, and you can update your availability whenever you like.",
       },
       {
-        q: "Is there anything to do while I wait?",
+        q: "What happens in the quiet time before a match?",
         a: "Only a little: finish your application, have a short call with your coordinator, and keep your contact details current. There are no clinic visits and no samples before a match — medical screening begins only once a family has chosen you.",
       },
       {
-        q: "Who does the medical testing?",
+        q: "Who looks after the medical side?",
         a: `Medical screening, testing and sample handling are ${PARTNER_CLINICS_LINE}. ${SITE.brand} looks after recruitment, your application and matching.`,
       },
       {
@@ -134,11 +134,11 @@ export const FAQ: Record<FaqGroup, { title: string; items: FaqItem[] }> = {
         a: "They reflect what intended-parent families ask for. They have no bearing on compensation.",
       },
       {
-        q: "Will my donation be anonymous?",
+        q: "Will my name be kept from the family?",
         a: "That depends on the family. Some ask for an anonymous donor, others for a known or open-ID arrangement. You'll always know which before agreeing, and it will be set out in your donor agreement.",
       },
       {
-        q: "Would I have any responsibility for a child?",
+        q: "Would I be responsible for a child later on?",
         a: "Donations are made under a written donor agreement that generally protects donors from parental rights and obligations. Laws differ from place to place, so the agreement and our partners will walk you through the details.",
       },
     ],
