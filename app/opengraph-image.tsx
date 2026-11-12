@@ -18,32 +18,33 @@ export default function OgImage() {
         position: "relative",
       }}
     >
-      {/* the K9 lemon-egg mark */}
+      {/* the K13 orchard-seal mark */}
       <svg
-        width="464"
-        height="400"
-        viewBox="-18 -4 116 100"
-        style={{ position: "absolute", right: 70, top: 115 }}
+        width="440"
+        height="425"
+        viewBox="-4 0 116 112"
+        style={{ position: "absolute", right: 90, top: 102 }}
       >
-        <circle cx="87.0" cy="58.0" r="2" fill="#B8CF8E" />
-        <circle cx="84.6" cy="69.9" r="2" fill="#B8CF8E" />
-        <circle cx="77.9" cy="79.9" r="2" fill="#B8CF8E" />
-        <circle cx="67.9" cy="86.6" r="2" fill="#B8CF8E" />
-        <circle cx="56.0" cy="89.0" r="2" fill="#B8CF8E" />
-        <circle cx="44.1" cy="86.6" r="2" fill="#B8CF8E" />
-        <circle cx="34.1" cy="79.9" r="2" fill="#B8CF8E" />
-        <circle cx="27.4" cy="69.9" r="2" fill="#B8CF8E" />
-        <circle cx="25.0" cy="58.0" r="2" fill="#B8CF8E" />
-        <circle cx="27.4" cy="46.1" r="2" fill="#B8CF8E" />
-        <circle cx="34.1" cy="36.1" r="2" fill="#B8CF8E" />
-        <circle cx="44.1" cy="29.4" r="2" fill="#B8CF8E" />
-        <circle cx="56.0" cy="27.0" r="2" fill="#B8CF8E" />
-        <circle cx="67.9" cy="29.4" r="2" fill="#B8CF8E" />
-        <circle cx="77.9" cy="36.1" r="2" fill="#B8CF8E" />
-        <circle cx="84.6" cy="46.1" r="2" fill="#B8CF8E" />
-        <circle cx="56" cy="58" r="24" fill="#E8C12C" />
-        <circle cx="48" cy="50" r="6" fill="#FFF6C9" />
-        <g transform="translate(16 26) rotate(40)">
+        <circle cx="54" cy="55" r="44" fill="#FFFDF3" stroke="#4F7A32" strokeWidth="2" />
+        <circle cx="54" cy="55" r="38" fill="none" stroke="#E3D89D" strokeWidth="1.5" />
+        <circle cx="74.0" cy="55.0" r="1.6" fill="#B8CF8E" />
+        <circle cx="72.5" cy="62.7" r="1.6" fill="#B8CF8E" />
+        <circle cx="68.1" cy="69.1" r="1.6" fill="#B8CF8E" />
+        <circle cx="61.7" cy="73.5" r="1.6" fill="#B8CF8E" />
+        <circle cx="54.0" cy="75.0" r="1.6" fill="#B8CF8E" />
+        <circle cx="46.3" cy="73.5" r="1.6" fill="#B8CF8E" />
+        <circle cx="39.9" cy="69.1" r="1.6" fill="#B8CF8E" />
+        <circle cx="35.5" cy="62.7" r="1.6" fill="#B8CF8E" />
+        <circle cx="34.0" cy="55.0" r="1.6" fill="#B8CF8E" />
+        <circle cx="35.5" cy="47.3" r="1.6" fill="#B8CF8E" />
+        <circle cx="39.9" cy="40.9" r="1.6" fill="#B8CF8E" />
+        <circle cx="46.3" cy="36.5" r="1.6" fill="#B8CF8E" />
+        <circle cx="54.0" cy="35.0" r="1.6" fill="#B8CF8E" />
+        <circle cx="61.7" cy="36.5" r="1.6" fill="#B8CF8E" />
+        <circle cx="68.1" cy="40.9" r="1.6" fill="#B8CF8E" />
+        <circle cx="72.5" cy="47.3" r="1.6" fill="#B8CF8E" />
+        <circle cx="54" cy="55" r="13" fill="#E8C12C" />
+        <g transform="translate(28 30) rotate(40) scale(0.85)">
           <path
             d="M-6 0 C -11 -6, -16 6, -22 0 S -33 -6, -40 0"
             fill="none"
@@ -51,17 +52,18 @@ export default function OgImage() {
             strokeWidth="2.6"
             strokeLinecap="round"
           />
-          <ellipse
-            cx="0"
-            cy="0"
-            rx="7.5"
-            ry="5.4"
-            fill="#FFFDF3"
-            stroke="#4F7A32"
-            strokeWidth="2"
-          />
+          <ellipse cx="0" cy="0" rx="7.5" ry="5.4" fill="#4F7A32" />
         </g>
-        <ellipse cx="80" cy="30" rx="9" ry="4" fill="#4F7A32" transform="rotate(-30 80 30)" />
+        <g transform="translate(80 82) rotate(220) scale(0.85)">
+          <path
+            d="M-6 0 C -11 -6, -16 6, -22 0 S -33 -6, -40 0"
+            fill="none"
+            stroke="#4F7A32"
+            strokeWidth="2.6"
+            strokeLinecap="round"
+          />
+          <ellipse cx="0" cy="0" rx="7.5" ry="5.4" fill="#4F7A32" />
+        </g>
       </svg>
       <div
         style={{

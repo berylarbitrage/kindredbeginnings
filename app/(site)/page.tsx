@@ -137,7 +137,7 @@ export default function HomePage() {
                 <br />
                 <span className="text-primary text-2xl">The {SITE.brand} team</span>
               </p>
-              <LogoMark className="h-14 w-16 shrink-0 opacity-90" />
+              <LogoMark className="h-16 w-[66px] shrink-0 opacity-90" />
             </div>
           </article>
         </div>
