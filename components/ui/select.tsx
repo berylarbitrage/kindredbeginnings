@@ -17,7 +17,7 @@ export function NativeSelect({ className, children, ...props }: React.ComponentP
       </select>
       <ChevronDown
         aria-hidden
-        className="text-sage-deep pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2"
+        className="text-leaf-deep pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2"
       />
     </div>
   );

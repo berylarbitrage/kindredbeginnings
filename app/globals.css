@@ -2,58 +2,62 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Kindred Beginnings — warm, organic, handcrafted botanical palette.
+/* Kindred Beginnings — "Lemon Tree": a calm, sunlit botanical palette.
    The site is always light. (A .dark class is kept for possible future use
    but is never applied.)
-   cream paper #F6F0E6 · terracotta #A64B2E · sage #7C8B6F / #44533B
-   clay #EBD9C8 · ochre #C8964A · ink brown #2F2A24 */
+   butter cream #FDF9E8 · lemon #C99A0C / #E8C12C · leaf green #4F7A32
+   deep leaf #2F4D1F · wash #F6EFC8 · hairline #E3D89D · ink #2C3A1E */
 :root {
   color-scheme: light;
-  --primary: #44533b; /* deep sage — headings, links, brand (7.1:1 on cream) */
-  --primary-foreground: #fbf7f0;
-  --accent: #a64b2e; /* terracotta — CTA buttons (5.7:1 with white text) */
+  --primary: #2f4d1f; /* deep leaf — headings, links, brand (9.6:1 on cream) */
+  --primary-foreground: #fdf9e8;
+  --accent: #4f7a32; /* leaf green — CTA buttons (5.0:1 with white text) */
   --accent-foreground: #ffffff;
-  --accent-hover: #8c3d24;
-  --background: #f6f0e6; /* cream paper */
-  --foreground: #2f2a24; /* ink brown */
-  --muted: #645849; /* warm stone — secondary text (5.4:1 on cream) */
-  --muted-bg: #efe5d6; /* sand wash */
-  --card: #fcf8f1;
-  --border: #dccdb8;
-  --ring: #a64b2e;
+  --accent-hover: #3f6427;
+  --background: #fdf9e8; /* butter cream */
+  --foreground: #2c3a1e; /* leafy ink */
+  --muted: #5e6a4c; /* olive stone — secondary text (5.5:1 on cream) */
+  --muted-bg: #f6efc8; /* lemon wash */
+  --card: #fffdf3;
+  --border: #e3d89d;
+  --ring: #4f7a32;
   --destructive: #a32a1c;
-  --primary-soft: #e2e6d6; /* sage wash */
-  --accent-soft: #ebd9c8; /* clay / blush wash */
-  --sage: #7c8b6f;
-  --sage-deep: #44533b;
-  --terracotta: #a64b2e;
-  --clay: #ebd9c8;
-  --ochre: #c8964a;
-  --paper: #f6f0e6;
+  --primary-soft: #e8efd6; /* leaf wash */
+  --accent-soft: #f8edbb; /* lemon blush */
+  --leaf: #4f7a32;
+  --leaf-deep: #2f4d1f;
+  --leaf-soft: #b8cf8e;
+  --lemon: #e8c12c; /* lemon fill — decoration only, never text */
+  --lemon-deep: #c99a0c; /* ornaments */
+  --lemon-ink: #a37a00; /* italic emphasis in large headings */
+  --butter: #fbf1c9;
+  --paper: #fdf9e8;
 }
 
 .dark {
-  --primary: #c9d3bb;
-  --primary-foreground: #1f251b;
-  --accent: #d9805f;
-  --accent-foreground: #1d120c;
-  --accent-hover: #e39373;
-  --background: #1f1b17;
-  --foreground: #f2eadf;
-  --muted: #bfb2a0;
-  --muted-bg: #29241f;
-  --card: #26211c;
-  --border: #3d352d;
-  --ring: #d9805f;
+  --primary: #d9e6bf;
+  --primary-foreground: #1b2412;
+  --accent: #8fbf63;
+  --accent-foreground: #142009;
+  --accent-hover: #a4cf7b;
+  --background: #1b2014;
+  --foreground: #f4f0da;
+  --muted: #c3c6a8;
+  --muted-bg: #262c1c;
+  --card: #222818;
+  --border: #3d4428;
+  --ring: #8fbf63;
   --destructive: #f97066;
-  --primary-soft: #2c3327;
-  --accent-soft: #3a2a21;
-  --sage: #93a285;
-  --sage-deep: #c9d3bb;
-  --terracotta: #d9805f;
-  --clay: #4a382c;
-  --ochre: #d6a85e;
-  --paper: #1f1b17;
+  --primary-soft: #2a3420;
+  --accent-soft: #3a3418;
+  --leaf: #8fbf63;
+  --leaf-deep: #d9e6bf;
+  --leaf-soft: #4f6a36;
+  --lemon: #e8c12c;
+  --lemon-deep: #e0b52a;
+  --lemon-ink: #f0cc4a;
+  --butter: #3a3418;
+  --paper: #1b2014;
 }
 
 @theme inline {
@@ -72,14 +76,16 @@
   --color-destructive: var(--destructive);
   --color-primary-soft: var(--primary-soft);
   --color-accent-soft: var(--accent-soft);
-  --color-sage: var(--sage);
-  --color-sage-deep: var(--sage-deep);
-  --color-terracotta: var(--terracotta);
-  --color-clay: var(--clay);
-  --color-ochre: var(--ochre);
+  --color-leaf: var(--leaf);
+  --color-leaf-deep: var(--leaf-deep);
+  --color-leaf-soft: var(--leaf-soft);
+  --color-lemon: var(--lemon);
+  --color-lemon-deep: var(--lemon-deep);
+  --color-lemon-ink: var(--lemon-ink);
+  --color-butter: var(--butter);
   --color-paper: var(--paper);
-  --font-sans: var(--font-karla), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
+  --font-sans: var(--font-mulish), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-petrona), ui-serif, Georgia, serif;
 }
 
 @layer base {
@@ -96,24 +102,24 @@
     overflow-x: hidden;
     line-height: 1.7;
   }
-  /* Paper grain: a faint fractal-noise layer over the whole document. */
+  /* Sunlit paper grain: a faint fractal-noise layer over the whole document. */
   body::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 0.45;
     mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.27 0 0 0 0 0.18 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.4 0 0 0 0 0.1 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   h1,
   h2,
   h3 {
     font-family: var(--font-serif);
-    font-weight: 500;
-    letter-spacing: -0.005em;
-    line-height: 1.12;
+    font-weight: 400;
+    letter-spacing: -0.012em;
+    line-height: 1.08;
     text-wrap: balance;
   }
   p {
@@ -128,7 +134,7 @@
     outline-offset: 3px;
   }
   ::selection {
-    background: var(--clay);
+    background: var(--butter);
     color: var(--foreground);
   }
 }
@@ -147,7 +153,7 @@
   @apply mb-3 leading-relaxed;
 }
 .prose-legal ul {
-  @apply marker:text-sage list-disc pl-6;
+  @apply marker:text-lemon-deep list-disc pl-6;
 }
 
 /* ---- Handcrafted flourishes ---------------------------------------------- */
@@ -165,22 +171,50 @@
   text-decoration-thickness: 2px;
 }
 
-/* Thin hand-drawn wavy rule between sections. */
+/* Scalloped hairline between sections (a row of tiny arches). */
 .divider-wave {
-  height: 14px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='14' viewBox='0 0 56 14'%3E%3Cpath d='M0 7 C 7 1.5, 14 1.5, 21 7 S 35 12.5, 42 7 S 52 2, 56 7' fill='none' stroke='%237C8B6F' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E")
-    repeat-x center / 56px 14px;
+  height: 12px;
+  background: radial-gradient(
+      circle at 10px 0,
+      transparent 8.6px,
+      var(--border) 9.1px,
+      var(--border) 10.3px,
+      transparent 10.8px
+    )
+    0 0 / 20px 12px repeat-x;
 }
 
-/* Vertical dashed, gently winding vine (timeline connector). */
+/* Scallop edge in a solid colour: sits on top of a coloured band. */
+.scallop-top {
+  height: 14px;
+  background: radial-gradient(circle at 12px 14px, currentColor 11.5px, transparent 12px) 0 0 / 24px
+    14px repeat-x;
+}
+.scallop-bottom {
+  height: 14px;
+  background: radial-gradient(circle at 12px 0, currentColor 11.5px, transparent 12px) 0 0 / 24px
+    14px repeat-x;
+}
+
+/* Vertical winding stem with tiny leaves (timeline connector). */
 .vine-line {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='40' viewBox='0 0 12 40'%3E%3Cpath d='M6 0 C 11 10, 1 30, 6 40' fill='none' stroke='%237C8B6F' stroke-width='1.4' stroke-dasharray='3 4'/%3E%3C/svg%3E")
-    repeat-y center top / 12px 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='48' viewBox='0 0 12 48'%3E%3Cpath d='M6 0 C 11 12, 1 36, 6 48' fill='none' stroke='%238FAE6A' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M7.6 18 C 11 15, 12 12, 11.5 9 C 9 10.5, 7.6 14, 7.6 18 Z' fill='%23B8CF8E'/%3E%3C/svg%3E")
+    repeat-y center top / 12px 48px;
+}
+
+/* Arch-topped window with a thin outline offset around it. */
+.arch-outline {
+  outline: 1px solid var(--border);
+  outline-offset: 10px;
 }
 
 /* Organic blob radius for washes and icon plates. */
 .blob {
   border-radius: 58% 42% 55% 45% / 48% 56% 44% 52%;
+}
+/* Leaf-shaped plate (step markers, icon plates). */
+.leaf-shape {
+  border-radius: 0 50% 0 50%;
 }
 .blob-2 {
   border-radius: 42% 58% 38% 62% / 56% 40% 60% 44%;
@@ -206,9 +240,25 @@
   transform-origin: 50% 100%;
   animation: sway 7s ease-in-out -2.5s infinite;
 }
+/* A branch hanging from above sways from its top edge. */
+@keyframes hang {
+  0%,
+  100% {
+    transform: rotate(-0.8deg);
+  }
+  50% {
+    transform: rotate(0.8deg);
+  }
+}
+.animate-hang {
+  transform-box: fill-box;
+  transform-origin: 0% 0%;
+  animation: hang 8s ease-in-out infinite;
+}
 @media (prefers-reduced-motion: reduce) {
   .animate-sway,
-  .animate-sway-delayed {
+  .animate-sway-delayed,
+  .animate-hang {
     animation: none;
   }
   *,

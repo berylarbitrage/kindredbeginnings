@@ -25,23 +25,6 @@ export function Leaf({ className }: { className?: string }) {
   );
 }
 
-/** A filled leaf — used as list bullets and step markers. */
-export function LeafSolid({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 32 32" className={className} aria-hidden>
-      <path d="M5 27 C 4 16, 11 6, 27 5 C 27.5 19, 19 27.5, 5 27 Z" fill="currentColor" />
-      <path
-        d="M6 26 C 11 21, 16 15, 22 10"
-        stroke="var(--paper)"
-        strokeWidth="1.3"
-        strokeLinecap="round"
-        fill="none"
-        opacity="0.3"
-      />
-    </svg>
-  );
-}
-
 /** A slender sprig: wavy stem with alternating leaves. */
 export function Sprig({ className }: { className?: string }) {
   return (
@@ -78,30 +61,57 @@ export function SunMark({ className }: { className?: string }) {
   );
 }
 
-/** Thin wavy horizontal divider with a small sprig in the middle. */
+/** A small lemon with one leaf — full colour, used as an ornament. */
+export function LemonIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 40 40" className={className} aria-hidden fill="none">
+      <path d="M20 13 C 24 6, 31 4, 37 6 C 34 12, 27 15, 20 13 Z" fill="var(--leaf)" />
+      <path
+        d="M20 13 C 19 15, 18.5 16, 18 17"
+        stroke="var(--leaf-deep)"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <path
+        d="M18.2 16.5 C 12 16.3, 5.5 21, 5.6 27.5 C 5.7 33.5, 11.5 37, 18 36.6 C 26 36.2, 31 31, 30.2 24.6 C 29.6 19.6, 24.6 16.7, 18.2 16.5 Z"
+        fill="var(--lemon)"
+      />
+      <path
+        d="M10 24.5 C 11 21.8, 13.2 20, 16 19.6"
+        stroke="#FFF6CC"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+/** Scalloped hairline divider with a small lemon in the middle. */
 export function WavyDivider({ className }: { className?: string }) {
   return (
     <div className={cn("mx-auto flex max-w-6xl items-center gap-4 px-4", className)} aria-hidden>
-      <span className="divider-wave flex-1 opacity-70" />
-      <Leaf className="text-sage size-6 shrink-0 -rotate-12" />
-      <span className="divider-wave flex-1 opacity-70" />
+      <span className="divider-wave flex-1" />
+      <LemonIcon className="size-7 shrink-0 -rotate-12" />
+      <span className="divider-wave flex-1" />
     </div>
   );
 }
 
-/** Rolling hills edge — sits at the top of a coloured band. */
+const SCALLOPS = Array.from(
+  { length: 24 },
+  (_, i) => `Q ${i * 60 + 30} -4, ${i * 60 + 60} 14`,
+).join(" ");
+
+/** Soft scalloped edge — sits at the top of a coloured band. */
 export function HillsEdge({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 1440 60"
+      viewBox="0 0 1440 24"
       preserveAspectRatio="none"
-      className={cn("block h-8 w-full md:h-12", className)}
+      className={cn("block h-3 w-full md:h-5", className)}
       aria-hidden
     >
-      <path
-        d="M0 60 V38 C 160 10, 320 8, 480 30 S 820 58, 1000 30 S 1300 4, 1440 26 V60 Z"
-        fill="currentColor"
-      />
+      <path d={`M0 24 V14 ${SCALLOPS} V24 Z`} fill="currentColor" />
     </svg>
   );
 }

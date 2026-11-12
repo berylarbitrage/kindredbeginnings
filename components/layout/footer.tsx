@@ -11,7 +11,7 @@ export function Footer() {
     <footer className="relative mt-24">
       <HillsEdge className="text-muted-bg" />
       <div className="bg-muted-bg relative overflow-hidden">
-        <Sprig className="text-sage/40 pointer-events-none absolute -right-2 bottom-6 hidden h-56 w-20 rotate-12 md:block" />
+        <Sprig className="text-leaf/40 pointer-events-none absolute -right-2 bottom-6 hidden h-56 w-20 rotate-12 md:block" />
         <div className="mx-auto grid max-w-6xl gap-10 px-4 pt-6 pb-12 md:grid-cols-4">
           <div className="space-y-3 md:col-span-2">
             <Logo />
@@ -32,7 +32,7 @@ export function Footer() {
             <p className="text-muted text-sm">{SITE.serviceArea}</p>
           </div>
           <div>
-            <h2 className="text-primary mb-3 font-serif text-xl font-semibold italic">Donate</h2>
+            <h2 className="text-primary mb-3 font-serif text-xl font-medium italic">Donate</h2>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link className={linkClass} href="/egg-donor">
@@ -58,7 +58,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h2 className="text-primary mb-3 font-serif text-xl font-semibold italic">Company</h2>
+            <h2 className="text-primary mb-3 font-serif text-xl font-medium italic">Company</h2>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link className={linkClass} href="/about">

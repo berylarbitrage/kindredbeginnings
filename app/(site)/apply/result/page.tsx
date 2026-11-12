@@ -21,7 +21,7 @@ export default async function ResultPage({
     <div className="mx-auto max-w-2xl px-4 py-16 text-center">
       {eligible ? (
         <>
-          <CheckCircle2 className="text-sage-deep mx-auto size-14" strokeWidth={1.4} aria-hidden />
+          <CheckCircle2 className="text-leaf-deep mx-auto size-14" strokeWidth={1.4} aria-hidden />
           <h1 className="text-primary mt-4 text-4xl font-medium md:text-5xl">
             Great news — you pre-qualify!
           </h1>

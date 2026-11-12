@@ -3,8 +3,8 @@ import { cn } from "@/lib/utils";
 
 const tones = {
   neutral: "bg-muted-bg text-foreground",
-  success: "bg-primary-soft text-sage-deep",
-  warn: "bg-accent-soft text-[#7a3520]",
+  success: "bg-primary-soft text-leaf-deep",
+  warn: "bg-accent-soft text-[#6b5000]",
   danger: "bg-destructive/10 text-destructive",
 } as const;
 

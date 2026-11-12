@@ -19,7 +19,7 @@ export default function ReferPage() {
       <div className="grid gap-10 md:grid-cols-2">
         <ReferForm />
         <div>
-          <h2 className="text-primary text-2xl font-semibold italic">How it works</h2>
+          <h2 className="text-primary text-2xl font-medium italic">How it works</h2>
           <ol className="mt-4 space-y-3">
             <li>
               <strong>1.</strong> Enter your name and email to get your unique link.
@@ -36,7 +36,7 @@ export default function ReferPage() {
               referral completes a donation.
             </li>
           </ol>
-          <h2 className="text-primary mt-8 text-2xl font-semibold italic">The fine print</h2>
+          <h2 className="text-primary mt-8 text-2xl font-medium italic">The fine print</h2>
           <ul className="text-muted mt-3 list-disc space-y-2 pl-5 text-sm">
             <li>The bonus is paid only after the referred donor completes a donation.</li>
             <li>Referrals are tracked for 30 days after your friend clicks your link.</li>

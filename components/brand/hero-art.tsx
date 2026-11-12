@@ -2,8 +2,9 @@ import { useId } from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * Original botanical illustration inside an arched window: a sun, rolling
- * hills and hand-drawn sprigs. Inline SVG — no images, no extra requests.
+ * Original "lemon tree" illustration inside an arch-topped window: a pale sun,
+ * a soft green hill and a lemon branch with leaves, fruit and small white
+ * blossoms. Inline SVG — no images, no extra requests.
  */
 export function HeroArt({
   variant,
@@ -12,24 +13,21 @@ export function HeroArt({
 }: {
   variant: "home" | "egg" | "sperm";
   className?: string;
-  /** Plain arch without the blob and offset outline (used inside cards). */
+  /** Plain arch without the offset outline (used inside cards). */
   compact?: boolean;
 }) {
   const id = useId().replace(/:/g, "");
   return (
-    <div className={cn("relative mx-auto w-full max-w-sm", className)} aria-hidden>
-      {!compact && (
-        <>
-          {/* clay blob behind the window */}
-          <div className="blob bg-clay absolute -inset-x-5 top-12 -bottom-5 opacity-90" />
-          {/* offset hand-drawn outline */}
-          <div className="border-sage-deep/45 absolute inset-0 translate-x-3 -translate-y-3 rounded-t-full border" />
-        </>
-      )}
+    <div
+      className={cn("relative mx-auto w-full max-w-sm", compact ? "" : "p-3", className)}
+      aria-hidden
+    >
       <div
         className={cn(
-          "border-sage-deep/70 relative aspect-[4/5] overflow-hidden rounded-t-full bg-[#F3E6D3]",
-          compact ? "border" : "border-[1.5px] shadow-[0_28px_50px_-30px_rgba(47,42,36,0.5)]",
+          "relative aspect-[4/5] overflow-hidden rounded-t-full rounded-b-[1.25rem] bg-[#FBF1C9]",
+          compact
+            ? "border-border border"
+            : "arch-outline shadow-[0_30px_60px_-36px_rgba(44,58,30,0.45)]",
         )}
       >
         <svg
@@ -39,227 +37,253 @@ export function HeroArt({
         >
           <defs>
             <linearGradient id={`sky-${id}`} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#F8EEDF" />
-              <stop offset="70%" stopColor="#EED6C0" />
+              <stop offset="0%" stopColor="#FAEDB8" />
+              <stop offset="75%" stopColor="#FDF7E0" />
             </linearGradient>
+            <radialGradient id={`sun-${id}`}>
+              <stop offset="60%" stopColor="#FFF9E3" />
+              <stop offset="100%" stopColor="#FFF9E3" stopOpacity="0" />
+            </radialGradient>
           </defs>
           <rect width="400" height="500" fill={`url(#sky-${id})`} />
 
-          {variant === "home" && <HomeScene />}
-          {variant === "egg" && <EggScene />}
-          {variant === "sperm" && <SpermScene />}
+          {variant === "home" && <HomeScene sun={`url(#sun-${id})`} />}
+          {variant === "egg" && <EggScene sun={`url(#sun-${id})`} />}
+          {variant === "sperm" && <SpermScene sun={`url(#sun-${id})`} />}
         </svg>
       </div>
     </div>
   );
 }
 
-const INK = "#44533B";
-
-function Sun({ cx, cy, r }: { cx: number; cy: number; r: number }) {
-  const rays = Array.from({ length: 12 }, (_, i) => (i * Math.PI) / 6);
-  return (
-    <g>
-      <circle cx={cx} cy={cy} r={r} fill="#D9A55A" />
-      <circle cx={cx} cy={cy} r={r} fill="none" stroke="#B9813A" strokeWidth="1.2" opacity="0.6" />
-      <g stroke="#C8964A" strokeWidth="2" strokeLinecap="round">
-        {rays.map((a, i) => {
-          const r1 = r + 10;
-          const r2 = r + (i % 2 ? 20 : 28);
-          return (
-            <line
-              key={i}
-              x1={round(cx + Math.cos(a) * r1)}
-              y1={round(cy + Math.sin(a) * r1)}
-              x2={round(cx + Math.cos(a) * r2)}
-              y2={round(cy + Math.sin(a) * r2)}
-            />
-          );
-        })}
-      </g>
-    </g>
-  );
-}
+const BRANCH = "#4A5E2C";
+const LEAF = "#4F7A32";
+const LEAF_LIGHT = "#6C9A45";
+const LEMON = "#E8C12C";
+const LEMON_SHADE = "#D4A814";
 
 /** Round to 2dp so server and client render identical attribute strings. */
 function round(n: number) {
   return Math.round(n * 100) / 100;
 }
 
-function Hills() {
+function PaleSun({ cx, cy, r, fill }: { cx: number; cy: number; r: number; fill: string }) {
   return (
     <g>
-      <path d="M-10 330 C 70 290, 150 300, 230 330 S 360 330, 410 300 V500 H-10 Z" fill="#B7BFA4" />
-      <path
-        d="M-10 330 C 70 290, 150 300, 230 330 S 360 330, 410 300"
+      <circle cx={cx} cy={cy} r={r * 1.45} fill={fill} />
+      <circle cx={cx} cy={cy} r={r} fill="#FFF8DE" />
+      <circle
+        cx={cx}
+        cy={cy}
+        r={r + 12}
         fill="none"
-        stroke={INK}
-        strokeWidth="1.4"
-        opacity="0.6"
+        stroke="#F1DE96"
+        strokeWidth="1.2"
+        strokeDasharray="2 8"
+        strokeLinecap="round"
       />
-      <path d="M-10 380 C 90 350, 180 360, 260 385 S 370 380, 410 360 V500 H-10 Z" fill="#8F9C80" />
-      <path
-        d="M-10 380 C 90 350, 180 360, 260 385 S 370 380, 410 360"
-        fill="none"
-        stroke={INK}
-        strokeWidth="1.4"
-        opacity="0.7"
-      />
-      <path d="M-10 440 C 80 415, 200 420, 300 445 S 380 440, 410 430 V500 H-10 Z" fill="#6F7D63" />
-      {/* hand-drawn furrows */}
-      <g stroke="#F3E6D3" strokeWidth="1.2" strokeLinecap="round" opacity="0.55" fill="none">
-        <path d="M40 470 C 90 458, 150 458, 200 470" />
-        <path d="M230 480 C 270 470, 320 468, 360 476" />
-        <path d="M70 410 C 110 400, 150 402, 180 410" />
+    </g>
+  );
+}
+
+function Hill({ back = true }: { back?: boolean }) {
+  return (
+    <g>
+      {back && (
+        <path
+          d="M-10 392 C 80 360, 170 372, 250 392 S 360 384, 410 366 V500 H-10 Z"
+          fill="#CFE0A8"
+        />
+      )}
+      <path d="M-10 424 C 90 398, 230 440, 410 410 V500 H-10 Z" fill="#B8CF8E" />
+      <g stroke="#FDF7E0" strokeWidth="1.3" strokeLinecap="round" opacity="0.6" fill="none">
+        <path d="M50 462 C 100 452, 150 454, 196 464" />
+        <path d="M236 474 C 276 464, 318 464, 356 470" />
       </g>
     </g>
   );
 }
 
-/** Line-drawn sprig with leaves, rooted at (x, y), growing to height h. */
-function Stem({
+/** A lemon leaf pointing along `angle` (degrees) from (x, y). */
+function LemonLeaf({
   x,
   y,
-  h,
-  flip = false,
-  leaf = "#7C8B6F",
-  className,
+  angle,
+  len = 46,
+  light = false,
 }: {
   x: number;
   y: number;
-  h: number;
-  flip?: boolean;
-  leaf?: string;
-  className?: string;
+  angle: number;
+  len?: number;
+  light?: boolean;
 }) {
-  const s = flip ? -1 : 1;
-  const top = y - h;
-  const pts = [0.25, 0.45, 0.65, 0.82];
+  const w = len * 0.34;
   return (
-    <g className={className}>
+    <g transform={`translate(${x} ${y}) rotate(${angle})`}>
       <path
-        d={`M${x} ${y} C ${x + 14 * s} ${y - h * 0.35}, ${x - 12 * s} ${y - h * 0.65}, ${x + 6 * s} ${top}`}
-        fill="none"
-        stroke={INK}
-        strokeWidth="2"
+        d={`M0 0 C ${round(len * 0.28)} ${-w}, ${round(len * 0.78)} ${round(-w * 0.9)}, ${len} 0 C ${round(len * 0.78)} ${round(w * 0.9)}, ${round(len * 0.28)} ${w}, 0 0 Z`}
+        fill={light ? LEAF_LIGHT : LEAF}
+      />
+      <path
+        d={`M3 0 C ${round(len * 0.4)} -1.5, ${round(len * 0.7)} -1, ${round(len * 0.92)} 0`}
+        stroke="#FDF7E0"
+        strokeWidth="1.1"
         strokeLinecap="round"
-      />
-      {pts.map((p, i) => {
-        const ly = round(y - h * p);
-        const lx = x + (i % 2 ? -4 : 4) * s;
-        const d = (i % 2 ? -1 : 1) * s;
-        const len = 34 - i * 5;
-        return (
-          <path
-            key={p}
-            d={`M${lx} ${ly} C ${round(lx + d * len * 0.3)} ${round(ly - len * 0.55)}, ${round(lx + d * len * 0.9)} ${round(ly - len * 0.55)}, ${lx + d * len} ${round(ly - len * 0.35)} C ${round(lx + d * len * 0.75)} ${round(ly - len * 0.05)}, ${round(lx + d * len * 0.3)} ${ly + 2}, ${lx} ${ly} Z`}
-            fill={leaf}
-            stroke={INK}
-            strokeWidth="1.2"
-            strokeLinejoin="round"
-          />
-        );
-      })}
-      <path
-        d={`M${x + 6 * s} ${top} C ${x + 2 * s} ${top - 14}, ${x + 14 * s} ${top - 22}, ${x + 20 * s} ${top - 18} C ${x + 20 * s} ${top - 8}, ${x + 12 * s} ${top}, ${x + 6 * s} ${top} Z`}
-        fill={leaf}
-        stroke={INK}
-        strokeWidth="1.2"
+        fill="none"
+        opacity="0.45"
       />
     </g>
   );
 }
 
-function Birds() {
+/** A lemon centred at (cx, cy), long axis rotated by `angle`. */
+function Lemon({ cx, cy, r, angle = 0 }: { cx: number; cy: number; r: number; angle?: number }) {
   return (
-    <g fill="none" stroke={INK} strokeWidth="1.6" strokeLinecap="round" opacity="0.7">
-      <path d="M92 150 q 8 -8 16 0 q 8 -8 16 0" />
-      <path d="M130 120 q 6 -6 12 0 q 6 -6 12 0" />
+    <g transform={`translate(${cx} ${cy}) rotate(${angle}) scale(${r})`}>
+      <path
+        d="M-1.2 0 C -1.07 -0.07, -1.02 -0.2, -0.96 -0.34 C -0.78 -0.86, 0.78 -0.86, 0.96 -0.34 C 1.02 -0.2, 1.07 -0.07, 1.2 0 C 1.07 0.07, 1.02 0.2, 0.96 0.34 C 0.78 0.86, -0.78 0.86, -0.96 0.34 C -1.02 0.2, -1.07 0.07, -1.2 0 Z"
+        fill={LEMON}
+      />
+      <path
+        d="M-0.9 0.32 C -0.6 0.78, 0.6 0.78, 0.9 0.32 C 0.6 0.62, -0.6 0.62, -0.9 0.32 Z"
+        fill={LEMON_SHADE}
+        opacity="0.6"
+      />
+      <path
+        d="M-0.62 -0.36 C -0.4 -0.56, -0.1 -0.62, 0.16 -0.6"
+        stroke="#FFF6CC"
+        strokeWidth="0.11"
+        strokeLinecap="round"
+        fill="none"
+      />
     </g>
   );
 }
 
-function HomeScene() {
+/** A small five-petal white blossom. */
+function Blossom({ x, y, s = 1 }: { x: number; y: number; s?: number }) {
+  return (
+    <g transform={`translate(${x} ${y}) scale(${s})`}>
+      {[0, 72, 144, 216, 288].map((a) => (
+        <ellipse
+          key={a}
+          cx="0"
+          cy="-6.5"
+          rx="4.4"
+          ry="6.6"
+          transform={`rotate(${a})`}
+          fill="#FFFFFF"
+          stroke="#E6DCA6"
+          strokeWidth="0.8"
+        />
+      ))}
+      <circle r="2.8" fill="#C99A0C" />
+    </g>
+  );
+}
+
+function HomeScene({ sun }: { sun: string }) {
   return (
     <>
-      <Sun cx={200} cy={210} r={52} />
-      <Birds />
-      <Hills />
-      {/* two sprigs leaning toward each other */}
-      <Stem x={150} y={470} h={220} className="animate-sway" />
-      <Stem x={252} y={470} h={190} flip leaf="#C46A4A" className="animate-sway-delayed" />
+      <PaleSun cx={212} cy={196} r={74} fill={sun} />
+      <Hill />
+      {/* the lemon branch, entering from the top left */}
+      <g className="animate-hang">
+        <path
+          d="M-6 70 C 70 96, 130 150, 190 214 C 240 268, 280 320, 330 372"
+          stroke={BRANCH}
+          strokeWidth="7"
+          strokeLinecap="round"
+          fill="none"
+        />
+        <path
+          d="M120 140 C 140 120, 168 112, 196 116"
+          stroke={BRANCH}
+          strokeWidth="3.5"
+          fill="none"
+          strokeLinecap="round"
+        />
+        <LemonLeaf x={52} y={84} angle={-40} len={52} />
+        <LemonLeaf x={70} y={92} angle={40} len={50} light />
+        <LemonLeaf x={118} y={124} angle={-62} len={48} light />
+        <LemonLeaf x={196} y={116} angle={-20} len={44} />
+        <LemonLeaf x={160} y={116} angle={-110} len={40} />
+        <LemonLeaf x={176} y={198} angle={-15} len={54} />
+        <LemonLeaf x={226} y={258} angle={-30} len={50} light />
+        <LemonLeaf x={232} y={262} angle={60} len={46} />
+        <LemonLeaf x={292} y={330} angle={-10} len={48} />
+        <LemonLeaf x={300} y={340} angle={110} len={42} light />
+        {/* lemons hang just below the branch */}
+        <path d="M108 128 L106 152" stroke={BRANCH} strokeWidth="2.5" />
+        <Lemon cx={104} cy={180} r={30} angle={80} />
+        <path d="M200 222 L202 246" stroke={BRANCH} strokeWidth="2.5" />
+        <Lemon cx={206} cy={272} r={28} angle={100} />
+        <path d="M262 302 L258 324" stroke={BRANCH} strokeWidth="2.5" />
+        <Lemon cx={252} cy={350} r={27} angle={75} />
+        <Blossom x={42} y={130} />
+        <Blossom x={150} y={92} s={0.85} />
+        <Blossom x={252} y={226} s={0.9} />
+        <Blossom x={330} y={300} s={0.8} />
+        <Blossom x={150} y={232} s={0.7} />
+      </g>
     </>
   );
 }
 
-function EggScene() {
+function EggScene({ sun }: { sun: string }) {
   return (
     <>
-      {/* a full, round sun with hand-drawn concentric rings */}
-      <circle cx="200" cy="215" r="70" fill="#D9A55A" />
-      <g fill="none" stroke="#B9813A" strokeLinecap="round" opacity="0.7">
-        <path d="M118 215 a82 82 0 0 1 164 -4" strokeWidth="1.6" />
-        <path d="M104 222 a96 96 0 0 1 190 -18" strokeWidth="1.2" strokeDasharray="2 7" />
+      <PaleSun cx={200} cy={250} r={96} fill={sun} />
+      <Hill />
+      {/* one lemon on a short twig, with a blossom just opening */}
+      <g className="animate-hang">
+        <path
+          d="M200 -6 C 196 40, 206 90, 198 140"
+          stroke={BRANCH}
+          strokeWidth="6"
+          strokeLinecap="round"
+          fill="none"
+        />
+        <LemonLeaf x={200} y={70} angle={-150} len={70} />
+        <LemonLeaf x={202} y={100} angle={-25} len={66} light />
+        <LemonLeaf x={198} y={136} angle={-160} len={56} light />
+        <LemonLeaf x={199} y={140} angle={-12} len={50} />
+        <Lemon cx={200} cy={232} r={72} angle={92} />
+        <Blossom x={262} y={140} s={1.5} />
+        <Blossom x={134} y={300} s={0.9} />
       </g>
-      <circle cx="200" cy="215" r="30" fill="#F3DDBE" opacity="0.75" />
-      <Hills />
-      {/* a flowering sprig */}
+    </>
+  );
+}
+
+function SpermScene({ sun }: { sun: string }) {
+  return (
+    <>
+      <PaleSun cx={290} cy={150} r={56} fill={sun} />
+      <Hill />
+      {/* a winding stem rising from the hill, lined with lemon leaves */}
       <g className="animate-sway">
-        <Stem x={210} y={475} h={200} leaf="#7C8B6F" />
-        <g transform="translate(216 255)">
-          {[0, 72, 144, 216, 288].map((a) => (
-            <ellipse
-              key={a}
-              cx="0"
-              cy="-11"
-              rx="7"
-              ry="12"
-              transform={`rotate(${a})`}
-              fill="#C46A4A"
-              stroke={INK}
-              strokeWidth="1"
-            />
-          ))}
-          <circle r="5" fill="#E9C27A" stroke={INK} strokeWidth="1" />
-        </g>
-      </g>
-    </>
-  );
-}
-
-function SpermScene() {
-  return (
-    <>
-      <Sun cx={290} cy={160} r={38} />
-      <Birds />
-      <Hills />
-      {/* a winding river path through the hills */}
-      <path
-        d="M80 500 C 120 450, 250 450, 210 410 S 150 360, 230 335"
-        fill="none"
-        stroke="#F3E6D3"
-        strokeWidth="16"
-        strokeLinecap="round"
-      />
-      <path
-        d="M80 500 C 120 450, 250 450, 210 410 S 150 360, 230 335"
-        fill="none"
-        stroke={INK}
-        strokeWidth="1.2"
-        strokeDasharray="1 9"
-        strokeLinecap="round"
-        opacity="0.7"
-      />
-      {/* tall grasses */}
-      <g className="animate-sway-delayed">
-        <Stem x={92} y={480} h={230} leaf="#7C8B6F" />
-      </g>
-      <g fill="none" stroke={INK} strokeWidth="1.6" strokeLinecap="round" className="animate-sway">
-        <path d="M318 482 C 320 420, 300 380, 290 330" />
-        <path d="M330 482 C 336 430, 340 390, 352 350" />
-        <path d="M340 482 C 342 440, 320 410, 312 380" />
-        <path d="M290 330 c -6 10 -4 20 2 26 M290 330 c 8 8 8 18 4 26" />
-        <path d="M352 350 c -8 8 -8 18 -4 24 M352 350 c 6 10 4 18 -2 24" />
+        <path
+          d="M150 500 C 120 430, 250 400, 210 330 C 176 270, 120 250, 170 180 C 200 140, 250 120, 236 60"
+          stroke={BRANCH}
+          strokeWidth="5"
+          strokeLinecap="round"
+          fill="none"
+        />
+        <LemonLeaf x={148} y={446} angle={200} len={50} />
+        <LemonLeaf x={186} y={414} angle={-20} len={54} light />
+        <LemonLeaf x={226} y={366} angle={-30} len={50} />
+        <LemonLeaf x={206} y={324} angle={200} len={56} light />
+        <LemonLeaf x={160} y={268} angle={190} len={48} />
+        <LemonLeaf x={152} y={232} angle={-20} len={52} light />
+        <LemonLeaf x={186} y={168} angle={200} len={50} />
+        <LemonLeaf x={216} y={140} angle={-30} len={48} light />
+        <LemonLeaf x={238} y={96} angle={200} len={44} />
+        <LemonLeaf x={238} y={66} angle={-70} len={40} light />
+        <Blossom x={240} y={58} s={0.95} />
+        <Blossom x={116} y={240} s={0.75} />
+        <Blossom x={262} y={318} s={0.7} />
       </g>
     </>
   );

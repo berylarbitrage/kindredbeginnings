@@ -24,13 +24,13 @@ export function Section({
       {(eyebrow || title || intro) && (
         <div className="mb-10 max-w-2xl md:mb-14">
           {eyebrow && (
-            <p className="text-sage-deep mb-4 flex items-center gap-2 text-xs font-semibold tracking-[0.24em] uppercase">
-              <Leaf className="text-sage size-4 -rotate-12" />
+            <p className="text-leaf-deep mb-4 flex items-center gap-2 text-xs font-semibold tracking-[0.24em] uppercase">
+              <Leaf className="text-leaf size-4 -rotate-12" />
               {eyebrow}
             </p>
           )}
           {title && (
-            <h2 className="text-primary text-[2.3rem] leading-[1.08] font-medium tracking-tight md:text-[3.4rem]">
+            <h2 className="text-primary text-[2.3rem] leading-[1.08] tracking-tight md:text-[3.3rem]">
               {title}
             </h2>
           )}

@@ -7,7 +7,7 @@ import { FaqList } from "@/components/marketing/faq-list";
 import { StickyCta } from "@/components/marketing/sticky-cta";
 import { Disclaimer } from "@/components/marketing/disclaimer";
 import { JsonLd } from "@/components/marketing/jsonld";
-import { HillsEdge, Leaf, Sprig, SunMark, WavyDivider } from "@/components/brand/botanicals";
+import { HillsEdge, LemonIcon, Leaf, Sprig, WavyDivider } from "@/components/brand/botanicals";
 import { Button } from "@/components/ui/button";
 import { requirementsList, type DonorType } from "@/config/eligibility";
 import { FAQ } from "@/content/faq";
@@ -39,8 +39,8 @@ export function DonorLanding({ c }: { c: DonorLandingContent }) {
 
       {c.partnerNote && (
         <div className="mx-auto max-w-6xl px-4">
-          <p className="bg-primary-soft border-sage/40 flex gap-3 rounded-2xl border p-5 text-sm leading-relaxed">
-            <Leaf className="text-sage-deep mt-0.5 size-5 shrink-0" />
+          <p className="bg-primary-soft border-leaf/40 flex gap-3 rounded-2xl border p-5 text-sm leading-relaxed">
+            <Leaf className="text-leaf-deep mt-0.5 size-5 shrink-0" />
             <span>{c.partnerNote}</span>
           </p>
         </div>
@@ -59,11 +59,11 @@ export function DonorLanding({ c }: { c: DonorLandingContent }) {
         <Section eyebrow="Compensation" title="Compensation & covered costs">
           <div className="grid items-stretch gap-6 md:grid-cols-2">
             <div className="bg-card border-border relative overflow-hidden rounded-t-[12rem] rounded-b-[1.75rem] border px-7 pt-14 pb-8 text-center md:px-10">
-              <SunMark className="text-ochre mx-auto size-11" />
-              <p className="text-sage-deep mt-4 text-xs font-semibold tracking-[0.22em] uppercase">
+              <LemonIcon className="mx-auto size-12" />
+              <p className="text-muted mt-4 text-xs font-semibold tracking-[0.22em] uppercase">
                 Compensation
               </p>
-              <p className="text-primary mt-3 font-serif text-[2.1rem] leading-tight font-semibold md:text-[2.6rem]">
+              <p className="text-foreground mt-3 font-serif text-[2.1rem] leading-tight md:text-[2.6rem]">
                 {c.comp.amount}
               </p>
               <p className="text-muted mx-auto mt-4 max-w-sm text-sm leading-relaxed">
@@ -72,14 +72,14 @@ export function DonorLanding({ c }: { c: DonorLandingContent }) {
               </p>
             </div>
             <div className="bg-card border-border relative overflow-hidden rounded-[1.75rem] border p-7 md:p-10">
-              <Sprig className="text-sage/30 pointer-events-none absolute -right-1 bottom-0 h-40 w-14" />
-              <p className="text-primary font-serif text-2xl font-semibold italic">
+              <Sprig className="text-leaf/30 pointer-events-none absolute -right-1 bottom-0 h-40 w-14" />
+              <p className="text-primary font-serif text-2xl font-medium italic">
                 Covered at no cost to you
               </p>
               <ul className="relative mt-5 space-y-3">
                 {c.comp.covered.map((x) => (
                   <li key={x} className="flex gap-3 leading-relaxed">
-                    <Leaf className="text-accent mt-1 size-4 shrink-0" />
+                    <Leaf className="text-leaf mt-1 size-4 shrink-0" />
                     {x}
                   </li>
                 ))}
@@ -106,7 +106,7 @@ export function DonorLanding({ c }: { c: DonorLandingContent }) {
         <div className="grid gap-x-12 gap-y-10 md:grid-cols-2">
           {c.concerns.map((x) => (
             <div key={x.title} className="border-accent/40 border-l-2 pl-6">
-              <h3 className="text-primary text-2xl font-semibold italic">{x.title}</h3>
+              <h3 className="text-primary text-2xl font-medium italic">{x.title}</h3>
               <p className="text-muted mt-2 leading-relaxed">{x.body}</p>
             </div>
           ))}
@@ -121,13 +121,17 @@ export function DonorLanding({ c }: { c: DonorLandingContent }) {
 
       <section className="mx-auto max-w-6xl px-4 pb-12">
         <div className="bg-primary text-primary-foreground relative overflow-hidden rounded-t-[10rem] rounded-b-[2rem] px-6 pt-16 pb-12 text-center md:rounded-t-[14rem]">
-          <Sprig className="pointer-events-none absolute bottom-0 left-6 h-36 w-12 text-[#c9d3bb]/40 md:left-16 md:h-48 md:w-16" />
-          <Sprig className="pointer-events-none absolute right-6 bottom-0 h-32 w-11 -scale-x-100 text-[#c9d3bb]/40 md:right-16 md:h-44 md:w-14" />
-          <h2 className="relative text-4xl font-medium md:text-5xl">
-            Ready to take the <em className="font-normal">first step?</em>
+          <Sprig className="pointer-events-none absolute bottom-0 left-6 h-36 w-12 text-[#d9e6bf]/40 md:left-16 md:h-48 md:w-16" />
+          <Sprig className="pointer-events-none absolute right-6 bottom-0 h-32 w-11 -scale-x-100 text-[#d9e6bf]/40 md:right-16 md:h-44 md:w-14" />
+          <h2 className="relative text-4xl md:text-5xl">
+            Ready to take the <em className="text-lemon block font-normal">first step?</em>
           </h2>
           <p className="relative mt-3 opacity-90">The pre-screen takes about 3 minutes.</p>
-          <Button asChild size="lg" className="relative mt-7">
+          <Button
+            asChild
+            size="lg"
+            className="bg-lemon text-foreground relative mt-7 shadow-none hover:bg-[#f2d04a]"
+          >
             <Link href={applyHref}>Start Your Application</Link>
           </Button>
         </div>

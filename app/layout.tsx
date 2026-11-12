@@ -1,16 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Karla } from "next/font/google";
+import { Mulish, Petrona } from "next/font/google";
 import "./globals.css";
 import { SITE, siteUrl } from "@/config/site";
 import { CookieBanner } from "@/components/analytics/cookie-banner";
 import { Analytics } from "@/components/analytics/analytics";
 
-const karla = Karla({ subsets: ["latin"], variable: "--font-karla", display: "swap" });
-const cormorant = Cormorant_Garamond({
+const mulish = Mulish({ subsets: ["latin"], variable: "--font-mulish", display: "swap" });
+const petrona = Petrona({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  variable: "--font-petrona",
   display: "swap",
 });
 
@@ -31,13 +30,13 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F6F0E6",
+  themeColor: "#FDF9E8",
   colorScheme: "light",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${karla.variable} ${cormorant.variable}`}>
+    <html lang="en" className={`${mulish.variable} ${petrona.variable}`}>
       <body className="min-h-dvh font-sans antialiased">
         {children}
         <CookieBanner />

@@ -1,7 +1,6 @@
 /**
- * Kindred Beginnings mark: two seedling stems that rise from one root and
- * twine around each other inside an arched window — two lives, one beginning.
- * One leaf in terracotta, one in sage, with a small ochre sun above.
+ * Kindred Beginnings mark: a small, ripe lemon hanging from a leafy sprig,
+ * with one white blossom just opening beside it — a bright new beginning.
  * Pure inline SVG so it stays crisp anywhere.
  */
 export function LogoMark({ className, title }: { className?: string; title?: string }) {
@@ -14,38 +13,56 @@ export function LogoMark({ className, title }: { className?: string; title?: str
       fill="none"
     >
       {title && <title>{title}</title>}
-      {/* arch window */}
-      <path d="M7 61 V29 a21 21 0 0 1 42 0 V61 Z" fill="#EBD9C8" />
+      {/* sprig */}
       <path
-        d="M7 61 V29 a21 21 0 0 1 42 0 V61"
-        stroke="#44533B"
-        strokeWidth="2.2"
+        d="M9 6 C 18 11, 25 17, 28 27 C 29.5 32, 29 36, 28.5 39"
+        stroke="#2F4D1F"
+        strokeWidth="2"
         strokeLinecap="round"
       />
-      {/* sun */}
-      <circle cx="38" cy="19" r="3.6" fill="#C8964A" />
-      {/* ground */}
-      <path d="M3 61 H53" stroke="#44533B" strokeWidth="2.2" strokeLinecap="round" />
-      {/* two twining stems */}
+      {/* leaves */}
+      <path d="M15 9.5 C 13 3.5, 6 1.5, 2 3 C 4 9, 10 11.5, 15 9.5 Z" fill="#4F7A32" />
+      <path d="M22 15.5 C 27 10, 35 9.5, 40 12 C 36 18, 28 19.5, 22 15.5 Z" fill="#4F7A32" />
+      <path d="M26.5 23.5 C 21 21, 14 22.5, 11 27 C 17 30, 23.5 28.5, 26.5 23.5 Z" fill="#6C9A45" />
       <path
-        d="M28 61 C 28 53, 22 50, 23 43 C 24 36, 32 35, 31 27"
-        stroke="#44533B"
-        strokeWidth="1.9"
+        d="M22 15.5 C 28 14.5, 33 13.5, 38 12.4"
+        stroke="#FDF9E8"
+        strokeWidth="0.9"
         strokeLinecap="round"
+        opacity="0.55"
+      />
+      {/* lemon */}
+      <path
+        d="M28.6 38.5 C 24 38.2, 17.5 42.5, 17.6 50.5 C 17.7 57, 23.5 61.5, 30 61 C 37.5 60.5, 42 54.5, 41 47.5 C 40.2 42, 34.5 38.4, 28.6 38.5 Z"
+        fill="#E8C12C"
       />
       <path
-        d="M28 61 C 28 53, 34 50, 33 43 C 32 36, 24 35, 25 28"
-        stroke="#44533B"
-        strokeWidth="1.9"
+        d="M41 47.5 C 42.6 47, 43.6 46, 43.8 44.6 C 42.4 44.4, 41.2 45, 40.3 46"
+        fill="#E8C12C"
+      />
+      <path
+        d="M22 47.5 C 22.6 44.6, 24.6 42.6, 27.4 42"
+        stroke="#FFF6CC"
+        strokeWidth="1.8"
         strokeLinecap="round"
       />
-      {/* terracotta leaf (right stem) */}
-      <path d="M31 27 C 31 20, 36 15, 44 14 C 44 22, 38 27, 31 27 Z" fill="#A64B2E" />
-      {/* sage leaf (left stem) */}
-      <path d="M25 28 C 25 21, 20 16, 12 15 C 12 23, 18 28, 25 28 Z" fill="#7C8B6F" />
-      {/* small lower leaves */}
-      <path d="M23.5 46 C 20 46, 16.5 43.5, 15.5 40 C 19 40, 22.5 42.5, 23.5 46 Z" fill="#7C8B6F" />
-      <path d="M32.5 46 C 36 46, 39.5 43.5, 40.5 40 C 37 40, 33.5 42.5, 32.5 46 Z" fill="#A64B2E" />
+      {/* blossom */}
+      <g transform="translate(44 27)">
+        {[0, 72, 144, 216, 288].map((a) => (
+          <ellipse
+            key={a}
+            cx="0"
+            cy="-4"
+            rx="2.6"
+            ry="4"
+            transform={`rotate(${a})`}
+            fill="#FFFFFF"
+            stroke="#CDBE72"
+            strokeWidth="0.7"
+          />
+        ))}
+        <circle r="1.8" fill="#C99A0C" />
+      </g>
     </svg>
   );
 }

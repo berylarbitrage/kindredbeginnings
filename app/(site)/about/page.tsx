@@ -19,7 +19,7 @@ export default function AboutPage() {
           and pre-screen egg and sperm donors, and guide them through every step of the process with
           care, honesty and respect.
         </p>
-        <h2 className="text-primary pt-4 text-3xl font-semibold italic">What we believe</h2>
+        <h2 className="text-primary pt-4 text-3xl font-medium italic">What we believe</h2>
         <ul className="marker:text-accent list-disc space-y-3 pl-6 text-base leading-relaxed">
           <li>
             <strong>Informed choice.</strong> Donors deserve clear, balanced information — including
@@ -38,7 +38,7 @@ export default function AboutPage() {
             you can call or text.
           </li>
         </ul>
-        <h2 className="text-primary pt-4 text-3xl font-semibold italic">How we work</h2>
+        <h2 className="text-primary pt-4 text-3xl font-medium italic">How we work</h2>
         <p className="text-base">
           We handle outreach, pre-screening, coordination and matching donors with intended-parent
           families. All medical evaluations, testing, procedures and sample handling are{" "}

@@ -28,11 +28,11 @@ export function LoginCard({
             <Icon className="size-5" aria-hidden />
           </span>
           <div>
-            <p className="text-primary font-serif font-semibold">{SITE.brand}</p>
+            <p className="text-primary font-serif font-medium">{SITE.brand}</p>
             <p className="text-muted text-xs tracking-widest uppercase">{area}</p>
           </div>
         </div>
-        <h1 className="text-2xl font-semibold">{title}</h1>
+        <h1 className="text-2xl font-medium">{title}</h1>
         <p className="text-muted mt-1 mb-6 text-sm">{intro}</p>
         {error === "link" && (
           <p role="alert" className="bg-accent-soft mb-4 rounded-lg p-3 text-sm">

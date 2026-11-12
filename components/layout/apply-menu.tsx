@@ -44,7 +44,7 @@ export function ApplyMenu({ className }: { className?: string }) {
         <div
           id="apply-menu"
           role="menu"
-          className="border-border bg-card absolute right-0 z-50 mt-3 w-64 overflow-hidden rounded-t-[2rem] rounded-b-2xl border p-2 shadow-[0_24px_48px_-24px_rgba(47,42,36,0.45)]"
+          className="border-border bg-card absolute right-0 z-50 mt-3 w-64 overflow-hidden rounded-t-[2rem] rounded-b-2xl border p-2 shadow-[0_24px_48px_-24px_rgba(44,58,30,0.45)]"
         >
           {APPLY_OPTIONS.map((o) => (
             <Link
@@ -54,7 +54,7 @@ export function ApplyMenu({ className }: { className?: string }) {
               onClick={() => setOpen(false)}
               className="hover:bg-accent-soft focus-visible:bg-accent-soft block rounded-xl px-4 py-3 transition-colors"
             >
-              <span className="text-primary block font-serif text-lg leading-tight font-semibold">
+              <span className="text-primary block font-serif text-lg leading-tight font-medium">
                 {o.label}
               </span>
               <span className="text-muted block text-xs">{o.note}</span>

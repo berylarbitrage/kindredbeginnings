@@ -13,24 +13,24 @@ export default function OgImage() {
         width: "100%",
         height: "100%",
         display: "flex",
-        background: "#F6F0E6",
+        background: "#FDF9E8",
         padding: 80,
         position: "relative",
       }}
     >
-      {/* clay blob */}
+      {/* thin outline offset around the arch */}
       <div
         style={{
           position: "absolute",
-          right: 40,
-          top: 150,
-          width: 420,
-          height: 440,
-          borderRadius: "58% 42% 55% 45%",
-          background: "#EBD9C8",
+          right: 96,
+          top: 56,
+          width: 328,
+          height: 508,
+          borderRadius: "164px 164px 30px 30px",
+          border: "2px solid #E3D89D",
         }}
       />
-      {/* arch window with sun and hills */}
+      {/* arch window: pale sun, soft hill, a lemon on its branch */}
       <div
         style={{
           position: "absolute",
@@ -38,9 +38,8 @@ export default function OgImage() {
           top: 70,
           width: 300,
           height: 480,
-          borderRadius: "150px 150px 0 0",
-          border: "3px solid #44533B",
-          background: "#F3E3CE",
+          borderRadius: "150px 150px 18px 18px",
+          background: "#FAEDB8",
           overflow: "hidden",
           display: "flex",
         }}
@@ -48,34 +47,82 @@ export default function OgImage() {
         <div
           style={{
             position: "absolute",
-            left: 95,
+            left: 50,
             top: 120,
-            width: 110,
-            height: 110,
-            borderRadius: 110,
-            background: "#D9A55A",
+            width: 200,
+            height: 200,
+            borderRadius: 200,
+            background: "#FFF8DE",
           }}
         />
         <div
           style={{
             position: "absolute",
-            left: -120,
-            top: 290,
-            width: 420,
+            left: -100,
+            top: 380,
+            width: 520,
             height: 300,
             borderRadius: 300,
-            background: "#B7BFA4",
+            background: "#B8CF8E",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            left: 146,
+            top: -10,
+            width: 9,
+            height: 150,
+            borderRadius: 9,
+            background: "#4A5E2C",
           }}
         />
         <div
           style={{
             position: "absolute",
             left: 60,
-            top: 350,
-            width: 400,
-            height: 300,
-            borderRadius: 300,
-            background: "#7C8B6F",
+            top: 60,
+            width: 90,
+            height: 36,
+            borderRadius: "0 50% 0 50%",
+            background: "#4F7A32",
+            transform: "rotate(-20deg)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            left: 155,
+            top: 92,
+            width: 90,
+            height: 36,
+            borderRadius: "50% 0 50% 0",
+            background: "#6C9A45",
+            transform: "rotate(20deg)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            left: 82,
+            top: 136,
+            width: 136,
+            height: 170,
+            borderRadius: "48% 48% 46% 46%",
+            background: "#E8C12C",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            left: 220,
+            top: 70,
+            width: 30,
+            height: 30,
+            borderRadius: 30,
+            background: "#FFFFFF",
+            border: "6px solid #FFFFFF",
+            boxShadow: "0 0 0 2px #E6DCA6",
           }}
         />
       </div>
@@ -88,14 +135,14 @@ export default function OgImage() {
         }}
       >
         <div
-          style={{ fontSize: 26, color: "#44533B", letterSpacing: 6, textTransform: "uppercase" }}
+          style={{ fontSize: 26, color: "#5E6A4C", letterSpacing: 6, textTransform: "uppercase" }}
         >
           {SITE.subtitle}
         </div>
         <div
           style={{
             fontSize: 84,
-            color: "#44533B",
+            color: "#2F4D1F",
             fontFamily: "Georgia, serif",
             lineHeight: 1.05,
             marginTop: 24,
@@ -103,12 +150,12 @@ export default function OgImage() {
           }}
         >
           {first}&nbsp;
-          <span style={{ color: "#A64B2E", fontStyle: "italic" }}>{rest.join(" ")}</span>
+          <span style={{ color: "#A37A00", fontStyle: "italic" }}>{rest.join(" ")}</span>
         </div>
         <div
           style={{
             fontSize: 38,
-            color: "#645849",
+            color: "#5E6A4C",
             marginTop: 28,
             fontStyle: "italic",
             fontFamily: "Georgia, serif",

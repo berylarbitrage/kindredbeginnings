@@ -8,10 +8,10 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // CTA — warm terracotta pill
+        // CTA — leaf-green pill
         default:
-          "bg-accent text-accent-foreground shadow-[0_8px_20px_-10px_rgba(166,75,46,0.7)] hover:bg-accent-hover active:translate-y-px",
-        primary: "bg-primary text-primary-foreground hover:bg-[#36432f] active:translate-y-px",
+          "bg-accent text-accent-foreground shadow-[0_8px_20px_-10px_rgba(79,122,50,0.7)] hover:bg-accent-hover active:translate-y-px",
+        primary: "bg-primary text-primary-foreground hover:bg-[#26401a] active:translate-y-px",
         outline:
           "border-[1.5px] border-foreground/55 text-foreground bg-transparent hover:border-accent hover:text-accent hover:bg-card/70",
         ghost: "hover:bg-muted-bg text-foreground",

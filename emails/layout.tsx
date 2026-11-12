@@ -8,9 +8,9 @@ export function EmailLayout({ preview, children }: { preview: string; children: 
       <Preview>{preview}</Preview>
       <Body
         style={{
-          backgroundColor: "#F6F0E6",
-          fontFamily: "Karla, Helvetica, Arial, sans-serif",
-          color: "#2F2A24",
+          backgroundColor: "#FDF9E8",
+          fontFamily: "Mulish, Helvetica, Arial, sans-serif",
+          color: "#2C3A1E",
         }}
       >
         <Container style={{ maxWidth: 560, margin: "0 auto", padding: "32px 24px" }}>
@@ -19,24 +19,24 @@ export function EmailLayout({ preview, children }: { preview: string; children: 
               fontSize: 20,
               fontWeight: 600,
               fontStyle: "italic",
-              color: "#44533B",
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              color: "#2F4D1F",
+              fontFamily: "Petrona, Georgia, serif",
             }}
           >
             {SITE.brand}
           </Text>
           <Section
             style={{
-              backgroundColor: "#FFFCF6",
-              border: "1px solid #DDD0BD",
+              backgroundColor: "#FFFDF3",
+              border: "1px solid #E3D89D",
               borderRadius: "28px 28px 12px 12px",
               padding: 24,
             }}
           >
             {children}
           </Section>
-          <Hr style={{ borderColor: "#DDD0BD", margin: "24px 0" }} />
-          <Text style={{ fontSize: 12, color: "#645849" }}>
+          <Hr style={{ borderColor: "#E3D89D", margin: "24px 0" }} />
+          <Text style={{ fontSize: 12, color: "#5E6A4C" }}>
             {SITE.brand} · {SITE.contactEmail} · {SITE.contactPhone}
             <br />
             {DISCLAIMER}
@@ -48,7 +48,7 @@ export function EmailLayout({ preview, children }: { preview: string; children: 
 }
 
 export const button = {
-  backgroundColor: "#A64B2E",
+  backgroundColor: "#4F7A32",
   color: "#FFFFFF",
   borderRadius: 999,
   padding: "12px 24px",

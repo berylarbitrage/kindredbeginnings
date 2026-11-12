@@ -39,7 +39,7 @@ export default function FaqPage() {
         <div className="space-y-12">
           {ORDER.map((g) => (
             <div key={g} id={g} className="scroll-mt-24">
-              <h2 className="text-primary mb-4 text-3xl font-semibold italic md:text-4xl">
+              <h2 className="text-primary mb-4 text-3xl font-medium italic md:text-4xl">
                 {FAQ[g].title}
               </h2>
               <FaqList items={FAQ[g].items} />

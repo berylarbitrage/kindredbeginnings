@@ -9,7 +9,7 @@ export function CheckList({ items }: { items: readonly string[] }) {
           key={item}
           className="border-border flex items-start gap-3 border-b border-dashed py-4 leading-relaxed"
         >
-          <Leaf className="text-sage mt-0.5 size-5 shrink-0" />
+          <Leaf className="text-leaf mt-0.5 size-5 shrink-0" />
           <span>{item}</span>
         </li>
       ))}

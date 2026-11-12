@@ -13,7 +13,7 @@ export default function LoginEmail({ url = "https://example.com/auth/confirm" }:
       <Button href={url} style={button}>
         Sign In
       </Button>
-      <Text style={{ fontSize: 13, color: "#645849" }}>
+      <Text style={{ fontSize: 13, color: "#5E6A4C" }}>
         If you didn&apos;t request this, you can safely ignore this email.
       </Text>
     </EmailLayout>

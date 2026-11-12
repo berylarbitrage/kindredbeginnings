@@ -15,14 +15,7 @@ import { FaqList } from "@/components/marketing/faq-list";
 import { ReferralBanner } from "@/components/marketing/referral-banner";
 import { JsonLd } from "@/components/marketing/jsonld";
 import { LogoMark } from "@/components/brand/logo-mark";
-import {
-  HillsEdge,
-  Leaf,
-  LeafSolid,
-  Sprig,
-  SunMark,
-  WavyDivider,
-} from "@/components/brand/botanicals";
+import { HillsEdge, Leaf, LemonIcon, Sprig, WavyDivider } from "@/components/brand/botanicals";
 import { Button } from "@/components/ui/button";
 import { SITE, spermComp } from "@/config/site";
 import { HOME_FAQ } from "@/content/faq";
@@ -94,7 +87,7 @@ export default function HomePage() {
           <ul className="text-muted flex flex-wrap gap-x-6 gap-y-2 text-sm">
             {PERKS.map(({ icon: Icon, label }) => (
               <li key={label} className="flex items-center gap-2">
-                <Icon className="text-sage-deep size-4" aria-hidden />
+                <Icon className="text-leaf-deep size-4" aria-hidden />
                 {label}
               </li>
             ))}
@@ -114,13 +107,13 @@ export default function HomePage() {
       {/* A letter to future donors */}
       <section className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <div className="relative mx-auto max-w-2xl">
-          <Sprig className="text-sage/45 pointer-events-none absolute top-6 -left-24 hidden h-64 w-24 -rotate-6 lg:block" />
-          <Sprig className="text-accent/25 pointer-events-none absolute -right-24 bottom-0 hidden h-56 w-20 -scale-x-100 rotate-6 lg:block" />
-          <article className="bg-card border-border relative rounded-[0.5rem] border px-6 py-10 shadow-[0_30px_60px_-40px_rgba(47,42,36,0.55)] sm:px-12 md:py-14">
-            <p className="text-sage-deep text-xs font-semibold tracking-[0.24em] uppercase">
+          <Sprig className="text-leaf/40 pointer-events-none absolute top-6 -left-24 hidden h-64 w-24 -rotate-6 lg:block" />
+          <Sprig className="text-lemon-deep/40 pointer-events-none absolute -right-24 bottom-0 hidden h-56 w-20 -scale-x-100 rotate-6 lg:block" />
+          <article className="bg-card relative rounded-[0.25rem] px-6 py-10 shadow-[0_24px_60px_-30px_rgba(44,58,30,0.4)] sm:px-12 md:py-14">
+            <p className="text-muted text-xs font-semibold tracking-[0.24em] uppercase">
               A note from us
             </p>
-            <h2 className="text-primary mt-4 text-4xl font-medium italic md:text-5xl">
+            <h2 className="text-foreground mt-4 text-4xl italic md:text-5xl">
               To our future donors,
             </h2>
             <div className="text-foreground/90 mt-6 space-y-5 text-lg leading-[1.85]">
@@ -139,7 +132,7 @@ export default function HomePage() {
               <p className="font-serif text-xl leading-snug">
                 <span className="text-muted italic">With gratitude,</span>
                 <br />
-                <span className="text-primary text-2xl font-semibold">The {SITE.brand} team</span>
+                <span className="text-primary text-2xl">The {SITE.brand} team</span>
               </p>
               <LogoMark className="h-14 w-12 shrink-0 opacity-90" />
             </div>
@@ -164,14 +157,14 @@ export default function HomePage() {
                 href: "/egg-donor",
                 who: "Egg donors",
                 amount: SITE.eggComp,
-                art: <SunMark className="text-ochre mx-auto size-12" />,
+                art: <LemonIcon className="mx-auto size-14" />,
                 tone: "bg-card",
               },
               {
                 href: "/sperm-donor",
                 who: "Sperm donors",
                 amount: spermComp,
-                art: <Leaf className="text-sage-deep mx-auto size-12" />,
+                art: <Leaf className="text-leaf mx-auto size-12" />,
                 tone: "bg-card",
               },
             ].map((c) => (
@@ -179,21 +172,17 @@ export default function HomePage() {
                 key={c.href}
                 href={c.href}
                 className={cn(
-                  "group border-border relative flex flex-col items-center overflow-hidden rounded-t-[14rem] rounded-b-[1.75rem] border px-7 pt-16 pb-9 text-center transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_50px_-30px_rgba(47,42,36,0.5)]",
+                  "group border-border relative flex flex-col items-center overflow-hidden rounded-t-[14rem] rounded-b-[1.75rem] border px-7 pt-16 pb-9 text-center transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_50px_-30px_rgba(44,58,30,0.5)]",
                   c.tone,
                 )}
               >
-                <span
-                  aria-hidden
-                  className="border-sage/40 pointer-events-none absolute inset-2.5 rounded-t-[14rem] rounded-b-[1.4rem] border border-dashed"
-                />
                 {c.art}
-                <p className="text-sage-deep mt-5 text-xs font-semibold tracking-[0.22em] uppercase">
+                <p className="text-muted mt-5 text-xs font-semibold tracking-[0.22em] uppercase">
                   {c.who}
                 </p>
                 <p
                   className={cn(
-                    "text-primary mt-3 font-serif leading-tight font-semibold",
+                    "text-foreground mt-3 font-serif leading-tight",
                     c.amount.length > 32
                       ? "max-w-xs text-[1.6rem] md:text-[1.85rem]"
                       : "text-[2rem] md:text-[2.4rem]",
@@ -228,7 +217,7 @@ export default function HomePage() {
             <path
               d="M50 0 C 95 50, 5 100, 50 150 S 95 250, 50 300 S 5 370, 50 400"
               fill="none"
-              stroke="#7C8B6F"
+              stroke="#8fae6a"
               strokeWidth="1.5"
               strokeDasharray="4 6"
               vectorEffect="non-scaling-stroke"
@@ -247,18 +236,24 @@ export default function HomePage() {
                 className="relative pb-10 pl-16 last:pb-0 md:grid md:grid-cols-2 md:gap-24 md:pb-14 md:pl-0"
               >
                 <span className="absolute top-0 left-0 flex size-11 items-center justify-center md:left-1/2 md:size-14 md:-translate-x-1/2">
-                  <LeafSolid
+                  <span
+                    aria-hidden
                     className={cn(
-                      "absolute inset-0 size-full",
-                      right ? "text-sage-deep -scale-x-100" : "text-accent",
+                      "leaf-shape absolute inset-0",
+                      right ? "bg-accent -scale-x-100" : "bg-lemon",
                     )}
                   />
-                  <span className="text-primary-foreground relative -mt-0.5 font-serif text-xl font-semibold italic md:text-2xl">
+                  <span
+                    className={cn(
+                      "relative font-serif text-xl italic md:text-2xl",
+                      right ? "text-white" : "text-foreground",
+                    )}
+                  >
                     {i + 1}
                   </span>
                 </span>
                 <div className={cn(right ? "md:col-start-2" : "md:text-right")}>
-                  <h3 className="text-primary text-2xl font-semibold md:text-3xl">{s.title}</h3>
+                  <h3 className="text-foreground text-2xl md:text-3xl">{s.title}</h3>
                   <p className="text-muted mt-2 leading-relaxed">{s.body}</p>
                 </div>
               </li>
@@ -288,13 +283,13 @@ export default function HomePage() {
                 )}
               >
                 <Icon
-                  className={cn("size-7", i % 2 ? "text-accent" : "text-sage-deep")}
+                  className={cn("size-7", i % 2 ? "text-lemon-ink" : "text-leaf")}
                   strokeWidth={1.5}
                   aria-hidden
                 />
               </span>
               <div>
-                <h3 className="text-primary text-2xl font-semibold">{title}</h3>
+                <h3 className="text-foreground text-2xl">{title}</h3>
                 <p className="text-muted mt-1.5 leading-relaxed">{body}</p>
               </div>
             </div>
@@ -305,8 +300,8 @@ export default function HomePage() {
       {/* Mission band */}
       <HillsEdge className="text-primary mt-6" />
       <section className="bg-primary text-primary-foreground relative overflow-hidden">
-        <Sprig className="pointer-events-none absolute top-10 left-4 hidden h-56 w-20 -rotate-12 text-[#c9d3bb]/35 md:left-16 md:block md:h-72 md:w-24" />
-        <Sprig className="pointer-events-none absolute right-4 bottom-6 hidden h-56 w-20 -scale-x-100 rotate-12 text-[#c9d3bb]/35 md:right-16 md:block md:h-72 md:w-24" />
+        <Sprig className="pointer-events-none absolute top-10 left-4 hidden h-56 w-20 -rotate-12 text-[#d9e6bf]/35 md:left-16 md:block md:h-72 md:w-24" />
+        <Sprig className="pointer-events-none absolute right-4 bottom-6 hidden h-56 w-20 -scale-x-100 rotate-12 text-[#d9e6bf]/35 md:right-16 md:block md:h-72 md:w-24" />
         <div className="relative mx-auto max-w-3xl px-8 py-16 text-center md:py-24">
           <p className="text-xs font-semibold tracking-[0.24em] uppercase opacity-80">
             Our mission
@@ -315,7 +310,7 @@ export default function HomePage() {
             Every family begins somewhere. For many, it begins with a stranger&apos;s kindness — and
             we exist to honour it with care, honesty and respect.
           </p>
-          <SunMark className="text-ochre mx-auto mt-8 size-9" />
+          <LemonIcon className="mx-auto mt-8 size-10" />
         </div>
       </section>
       <HillsEdge className="text-primary rotate-180" />
@@ -324,11 +319,11 @@ export default function HomePage() {
       <Section>
         <div className="grid gap-10 md:grid-cols-[1fr_1.8fr] md:gap-16">
           <div>
-            <p className="text-sage-deep mb-4 flex items-center gap-2 text-xs font-semibold tracking-[0.24em] uppercase">
-              <Leaf className="text-sage size-4 -rotate-12" />
+            <p className="text-leaf-deep mb-4 flex items-center gap-2 text-xs font-semibold tracking-[0.24em] uppercase">
+              <Leaf className="text-leaf size-4 -rotate-12" />
               FAQ
             </p>
-            <h2 className="text-primary text-[2.3rem] leading-[1.08] font-medium md:text-[3.2rem]">
+            <h2 className="text-primary text-[2.3rem] leading-[1.08] md:text-[3.2rem]">
               Common <Em>questions</Em>
             </h2>
             <p className="text-muted mt-4 leading-relaxed">
