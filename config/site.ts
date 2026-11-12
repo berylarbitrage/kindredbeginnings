@@ -20,7 +20,7 @@ export const SITE = {
   referralBonus: "$500", // {{REFERRAL_BONUS}}
   serviceArea: "Serving donors across the U.S. and internationally",
   tagline:
-    "Where kindness becomes kin. Egg & sperm donation that helps build families — with compensation for your time and commitment.",
+    "Every family tree begins with a kindness. Egg & sperm donation, offered gently — with compensation for your time and commitment.",
   subtitle: "Egg & Sperm Donation",
 } as const;
 

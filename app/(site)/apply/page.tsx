@@ -7,7 +7,7 @@ import { Leaf } from "@/components/brand/botanicals";
 
 export const metadata: Metadata = {
   title: "Apply to Become a Donor",
-  description: `Choose your program: apply to become an egg donor (${SITE.eggComp}) or a sperm donor with ${SITE.brand}. The pre-screen takes about 3 minutes.`,
+  description: `Two paths, one short first step: apply to become an egg donor (${SITE.eggComp}) or a sperm donor with ${SITE.brand}. The pre-screen takes about 3 minutes.`,
   alternates: { canonical: "/apply" },
 };
 
@@ -34,12 +34,14 @@ export default function ApplyChooserPage() {
       <div className="mx-auto max-w-2xl text-center">
         <p className="text-leaf-deep flex items-center justify-center gap-2 text-xs font-semibold tracking-[0.24em] uppercase">
           <Leaf className="text-accent size-4 -rotate-12" />
-          Apply
+          Choose your path
         </p>
         <h1 className="text-primary mt-4 text-[2.6rem] leading-[1.05] font-medium md:text-6xl">
-          Which program are you <em className="text-lemon-ink font-normal">applying for?</em>
+          Which path <em className="text-lemon-ink font-normal">feels like yours?</em>
         </h1>
-        <p className="text-muted mt-5 text-lg">The pre-screen takes about 3 minutes.</p>
+        <p className="text-muted mt-5 text-lg">
+          Whichever you choose, the first page is short — the pre-screen takes about 3 minutes.
+        </p>
       </div>
       <div className="mt-12 grid gap-8 md:grid-cols-2">
         {OPTIONS.map((o) => (
@@ -62,7 +64,7 @@ export default function ApplyChooserPage() {
                 Apply as {o.title.toLowerCase()} <ArrowRight className="size-4" aria-hidden />
               </Link>
               <Link href={o.learn} className="link-underline text-primary mt-4 block text-sm">
-                Learn about the program first
+                Read this chapter first
               </Link>
             </div>
           </div>

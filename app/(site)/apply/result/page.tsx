@@ -23,22 +23,24 @@ export default async function ResultPage({
         <>
           <CheckCircle2 className="text-leaf-deep mx-auto size-14" strokeWidth={1.4} aria-hidden />
           <h1 className="text-primary mt-4 text-4xl font-medium md:text-5xl">
-            Great news — you pre-qualify!
+            Lovely news — you pre-qualify.
           </h1>
           <p className="text-muted mt-4 text-lg">
-            Thank you for applying. It looks like you already have an account with us, so for your
-            security we&apos;ve emailed you a sign-in link to continue your full application. Your
-            progress saves automatically after every step.
+            Thank you for applying. It seems you already have an account with us, so to keep things
+            secure we&apos;ve emailed you a sign-in link to carry on with your full application.
+            Your progress is saved after every step.
           </p>
           <ol className="mx-auto mt-8 max-w-md space-y-3 text-left">
             <li>
-              <strong>1.</strong> Check your inbox (and spam folder) for an email from {SITE.brand}.
+              <strong>1.</strong> Look in your inbox (and your spam folder) for a note from{" "}
+              {SITE.brand}.
             </li>
             <li>
-              <strong>2.</strong> Complete your full application in the secure portal.
+              <strong>2.</strong> Finish your full application, at your own pace, in the secure
+              portal.
             </li>
             <li>
-              <strong>3.</strong> Your coordinator will reach out to schedule a short video call.
+              <strong>3.</strong> Your coordinator will write to arrange a short video call.
             </li>
           </ol>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
@@ -47,23 +49,23 @@ export default async function ResultPage({
             </Button>
           </div>
           <p className="text-muted mt-6 text-sm">
-            Didn&apos;t get the email? You can request a new link from the portal sign-in page.
+            No email yet? You can ask for a fresh link from the portal sign-in page.
           </p>
         </>
       ) : (
         <>
           <Heart className="text-accent mx-auto size-14" strokeWidth={1.4} aria-hidden />
           <h1 className="text-primary mt-4 text-4xl font-medium md:text-5xl">
-            Thank you for your interest
+            Thank you for thinking of this
           </h1>
           <p className="text-muted mt-4 text-lg">
-            Based on the current requirements of our partner programs, we&apos;re not able to move
-            forward with your application right now. These requirements are set by medical providers
-            and aren&apos;t a reflection of you.
+            Under the current requirements of our partner programs, we aren&apos;t able to take your
+            application further just now. Those requirements are set by medical providers, and they
+            say nothing about you.
           </p>
           <p className="mt-4 text-lg">
-            You can still make a difference: refer a friend and earn{" "}
-            <strong>{SITE.referralBonus}</strong> when they complete a donation.
+            There is still a way to help: refer a friend, and we&apos;ll send you{" "}
+            <strong>{SITE.referralBonus}</strong> if they go on to complete a donation.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild size="lg">

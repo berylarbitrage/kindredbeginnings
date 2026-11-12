@@ -12,15 +12,15 @@ export function ReferralBanner() {
         <div className="relative mx-auto max-w-xl">
           <LemonIcon className="mx-auto size-14" />
           <h2 className="text-primary mt-4 text-3xl md:text-5xl">
-            Refer a friend,{" "}
-            <em className="text-lemon-ink block font-normal">earn {SITE.referralBonus}</em>
+            Know someone kind?
+            <em className="text-lemon-ink block font-normal">Pass the word along.</em>
           </h2>
           <p className="text-muted mt-4 leading-relaxed">
-            Know someone who&apos;d be a wonderful donor? Share your link and earn a bonus when they
-            complete a donation.
+            If a friend you refer goes on to complete a donation, we&apos;ll send you{" "}
+            <strong className="text-foreground">{SITE.referralBonus}</strong> as a thank-you.
           </p>
           <Button asChild size="lg" className="mt-7">
-            <Link href="/refer">Get My Referral Link</Link>
+            <Link href="/refer">Share My Referral Link</Link>
           </Button>
         </div>
       </div>

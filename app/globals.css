@@ -208,6 +208,17 @@
   outline-offset: 10px;
 }
 
+/* Letter drop cap: a large Petrona initial in lemon. */
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 4.4em;
+  line-height: 0.82;
+  margin: 0.08em 0.12em 0 0;
+  color: var(--lemon-ink);
+}
+
 /* Organic blob radius for washes and icon plates. */
 .blob {
   border-radius: 58% 42% 55% 45% / 48% 56% 44% 52%;

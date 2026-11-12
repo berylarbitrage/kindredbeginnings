@@ -161,7 +161,7 @@ export default function OgImage() {
             fontFamily: "Georgia, serif",
           }}
         >
-          Where kindness becomes kin.
+          Every family tree begins with a kindness.
         </div>
       </div>
     </div>,

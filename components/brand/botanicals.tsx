@@ -86,6 +86,81 @@ export function LemonIcon({ className }: { className?: string }) {
   );
 }
 
+/** A five-petal lemon blossom on a short stem with one leaf. */
+export function BlossomSketch({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 64 64" className={className} aria-hidden fill="none">
+      <path
+        d="M32 62 C 31 52, 34 44, 32 34"
+        stroke="var(--leaf-deep)"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <path d="M32 50 C 40 44, 50 44, 56 48 C 50 55, 40 55, 32 50 Z" fill="var(--leaf)" />
+      <g transform="translate(32 22)">
+        {[0, 72, 144, 216, 288].map((a) => (
+          <ellipse
+            key={a}
+            cx="0"
+            cy="-9"
+            rx="6.5"
+            ry="9.5"
+            transform={`rotate(${a})`}
+            fill="#FFFFFF"
+            stroke="var(--border)"
+            strokeWidth="1.2"
+          />
+        ))}
+        <circle r="4" fill="var(--lemon-deep)" />
+      </g>
+    </svg>
+  );
+}
+
+/** A lemon cut in half: rind, pith and segments. */
+export function LemonSlice({ className }: { className?: string }) {
+  const segs = Array.from({ length: 8 }, (_, i) => i * 45);
+  return (
+    <svg viewBox="0 0 64 64" className={className} aria-hidden fill="none">
+      <circle cx="32" cy="32" r="27" fill="var(--lemon)" />
+      <circle cx="32" cy="32" r="23" fill="#FFF6CC" />
+      <g transform="translate(32 32)">
+        {segs.map((a) => (
+          <path
+            key={a}
+            d="M0 -3 C 5 -8, 7 -15, 0 -20 C -7 -15, -5 -8, 0 -3 Z"
+            transform={`rotate(${a + 22.5})`}
+            fill="#F2D65A"
+          />
+        ))}
+        <circle r="2" fill="#FFF6CC" />
+      </g>
+    </svg>
+  );
+}
+
+/** A tiny watering can drawn in line, for "care" notes. */
+export function WateringCan({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 64 64" className={className} aria-hidden fill="none">
+      <g stroke="var(--leaf-deep)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path
+          d="M16 26 H44 V50 C 44 53, 42 55, 39 55 H21 C 18 55, 16 53, 16 50 Z"
+          fill="var(--butter)"
+        />
+        <path d="M44 32 L58 20" />
+        <path d="M55 16 L61 23" />
+        <path d="M22 26 C 22 16, 38 16, 38 26" />
+      </g>
+      <g fill="var(--leaf-soft)">
+        <circle cx="60" cy="30" r="1.6" />
+        <circle cx="56" cy="34" r="1.6" />
+        <circle cx="61" cy="38" r="1.6" />
+      </g>
+    </svg>
+  );
+}
+
 /** Scalloped hairline divider with a small lemon in the middle. */
 export function WavyDivider({ className }: { className?: string }) {
   return (

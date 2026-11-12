@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.brand}`,
   },
   description:
-    "Become an egg or sperm donor and get matched with a family. Compensation for your time, medical costs covered, a dedicated coordinator — U.S. and international donors welcome.",
+    "Egg and sperm donation, explained gently. A coordinator beside you, every medical cost covered and compensation for your time — U.S. and international donors welcome.",
   openGraph: {
     type: "website",
     siteName: SITE.brand,

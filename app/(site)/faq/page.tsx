@@ -10,11 +10,11 @@ import { faqJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Answers to common questions about egg donation, sperm donation, compensation, and privacy.",
+    "Gentle, honest answers about egg and sperm donation: the pre-screen, compensation, matching, medical testing, privacy and more.",
   alternates: { canonical: "/faq" },
 };
 
-const ORDER: FaqGroup[] = ["egg", "sperm", "general"];
+const ORDER: FaqGroup[] = ["general", "egg", "sperm"];
 
 export default function FaqPage() {
   const all = ORDER.flatMap((g) => FAQ[g].items);
@@ -22,8 +22,9 @@ export default function FaqPage() {
     <>
       <JsonLd data={faqJsonLd(all)} />
       <Section
-        title="Frequently Asked Questions"
-        intro="Can't find your answer? Contact us any time."
+        eyebrow="Questions"
+        title="Things people ask us"
+        intro="Gathered from the questions donors bring us most. If yours isn't here, write to us any time."
       >
         <nav aria-label="FAQ sections" className="mb-10 flex flex-wrap gap-2">
           {ORDER.map((g) => (

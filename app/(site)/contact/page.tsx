@@ -6,13 +6,17 @@ import { SITE } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: `Questions about becoming a donor? Contact ${SITE.brand}.`,
+  description: `Write to ${SITE.brand} with any question about becoming an egg or sperm donor — a real person will answer.`,
   alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
   return (
-    <Section title="Contact us" intro="Have a question? We're happy to help.">
+    <Section
+      eyebrow="Write to us"
+      title="Send us a note"
+      intro="Whatever you're wondering, however small — a real person will read it and write back."
+    >
       <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
         <div className="space-y-4">
           <p className="flex items-center gap-3">

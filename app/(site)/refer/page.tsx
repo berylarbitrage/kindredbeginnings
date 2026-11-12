@@ -1,25 +1,30 @@
 import type { Metadata } from "next";
+import { Em } from "@/components/marketing/hero";
 import { Section } from "@/components/marketing/section";
 import { ReferForm } from "@/components/forms/refer-form";
 import { SITE } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Refer a Friend",
-  description: `Refer a friend to become an egg or sperm donor and earn ${SITE.referralBonus}.`,
+  description: `Pass the word to a friend who might become an egg or sperm donor, and receive ${SITE.referralBonus} as thanks if they complete a donation.`,
   alternates: { canonical: "/refer" },
 };
 
 export default function ReferPage() {
   return (
     <Section
-      eyebrow="Referral program"
-      title={`Refer a friend, earn ${SITE.referralBonus}`}
-      intro="Know someone who might be a great donor? Share your personal link."
+      eyebrow="Pass it along"
+      title={
+        <>
+          Refer a friend, <Em>earn {SITE.referralBonus}</Em>
+        </>
+      }
+      intro="If someone in your life might want to donate, share your personal link with them. When they complete a donation, we'll send you a thank-you."
     >
       <div className="grid gap-10 md:grid-cols-2">
         <ReferForm />
         <div>
-          <h2 className="text-primary text-2xl font-medium italic">How it works</h2>
+          <h2 className="text-primary text-2xl font-medium italic">How it works, simply</h2>
           <ol className="mt-4 space-y-3">
             <li>
               <strong>1.</strong> Enter your name and email to get your unique link.
