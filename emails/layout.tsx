@@ -18,12 +18,16 @@ export function EmailLayout({ preview, children }: { preview: string; children: 
             style={{
               fontSize: 20,
               fontWeight: 600,
-              fontStyle: "italic",
+              lineHeight: 1.15,
               color: "#2F4D1F",
               fontFamily: "Petrona, Georgia, serif",
             }}
           >
-            {SITE.brand}
+            {SITE.brand.split(" ")[0]}
+            <br />
+            <span style={{ color: "#A37A00", fontStyle: "italic", fontWeight: 500 }}>
+              {SITE.brand.split(" ").slice(1).join(" ")}
+            </span>
           </Text>
           <Section
             style={{

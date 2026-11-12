@@ -18,114 +18,51 @@ export default function OgImage() {
         position: "relative",
       }}
     >
-      {/* thin outline offset around the arch */}
-      <div
-        style={{
-          position: "absolute",
-          right: 96,
-          top: 56,
-          width: 328,
-          height: 508,
-          borderRadius: "164px 164px 30px 30px",
-          border: "2px solid #E3D89D",
-        }}
-      />
-      {/* arch window: pale sun, soft hill, a lemon on its branch */}
-      <div
-        style={{
-          position: "absolute",
-          right: 110,
-          top: 70,
-          width: 300,
-          height: 480,
-          borderRadius: "150px 150px 18px 18px",
-          background: "#FAEDB8",
-          overflow: "hidden",
-          display: "flex",
-        }}
+      {/* the K9 lemon-egg mark */}
+      <svg
+        width="464"
+        height="400"
+        viewBox="-18 -4 116 100"
+        style={{ position: "absolute", right: 70, top: 115 }}
       >
-        <div
-          style={{
-            position: "absolute",
-            left: 50,
-            top: 120,
-            width: 200,
-            height: 200,
-            borderRadius: 200,
-            background: "#FFF8DE",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            left: -100,
-            top: 380,
-            width: 520,
-            height: 300,
-            borderRadius: 300,
-            background: "#B8CF8E",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            left: 146,
-            top: -10,
-            width: 9,
-            height: 150,
-            borderRadius: 9,
-            background: "#4A5E2C",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            left: 60,
-            top: 60,
-            width: 90,
-            height: 36,
-            borderRadius: "0 50% 0 50%",
-            background: "#4F7A32",
-            transform: "rotate(-20deg)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            left: 155,
-            top: 92,
-            width: 90,
-            height: 36,
-            borderRadius: "50% 0 50% 0",
-            background: "#6C9A45",
-            transform: "rotate(20deg)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            left: 82,
-            top: 136,
-            width: 136,
-            height: 170,
-            borderRadius: "48% 48% 46% 46%",
-            background: "#E8C12C",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            left: 220,
-            top: 70,
-            width: 30,
-            height: 30,
-            borderRadius: 30,
-            background: "#FFFFFF",
-            border: "6px solid #FFFFFF",
-            boxShadow: "0 0 0 2px #E6DCA6",
-          }}
-        />
-      </div>
+        <circle cx="87.0" cy="58.0" r="2" fill="#B8CF8E" />
+        <circle cx="84.6" cy="69.9" r="2" fill="#B8CF8E" />
+        <circle cx="77.9" cy="79.9" r="2" fill="#B8CF8E" />
+        <circle cx="67.9" cy="86.6" r="2" fill="#B8CF8E" />
+        <circle cx="56.0" cy="89.0" r="2" fill="#B8CF8E" />
+        <circle cx="44.1" cy="86.6" r="2" fill="#B8CF8E" />
+        <circle cx="34.1" cy="79.9" r="2" fill="#B8CF8E" />
+        <circle cx="27.4" cy="69.9" r="2" fill="#B8CF8E" />
+        <circle cx="25.0" cy="58.0" r="2" fill="#B8CF8E" />
+        <circle cx="27.4" cy="46.1" r="2" fill="#B8CF8E" />
+        <circle cx="34.1" cy="36.1" r="2" fill="#B8CF8E" />
+        <circle cx="44.1" cy="29.4" r="2" fill="#B8CF8E" />
+        <circle cx="56.0" cy="27.0" r="2" fill="#B8CF8E" />
+        <circle cx="67.9" cy="29.4" r="2" fill="#B8CF8E" />
+        <circle cx="77.9" cy="36.1" r="2" fill="#B8CF8E" />
+        <circle cx="84.6" cy="46.1" r="2" fill="#B8CF8E" />
+        <circle cx="56" cy="58" r="24" fill="#E8C12C" />
+        <circle cx="48" cy="50" r="6" fill="#FFF6C9" />
+        <g transform="translate(16 26) rotate(40)">
+          <path
+            d="M-6 0 C -11 -6, -16 6, -22 0 S -33 -6, -40 0"
+            fill="none"
+            stroke="#4F7A32"
+            strokeWidth="2.6"
+            strokeLinecap="round"
+          />
+          <ellipse
+            cx="0"
+            cy="0"
+            rx="7.5"
+            ry="5.4"
+            fill="#FFFDF3"
+            stroke="#4F7A32"
+            strokeWidth="2"
+          />
+        </g>
+        <ellipse cx="80" cy="30" rx="9" ry="4" fill="#4F7A32" transform="rotate(-30 80 30)" />
+      </svg>
       <div
         style={{
           display: "flex",
@@ -141,15 +78,15 @@ export default function OgImage() {
         </div>
         <div
           style={{
-            fontSize: 84,
-            color: "#2F4D1F",
-            fontFamily: "Georgia, serif",
-            lineHeight: 1.05,
-            marginTop: 24,
             display: "flex",
+            flexDirection: "column",
+            fontSize: 96,
+            fontFamily: "Georgia, serif",
+            lineHeight: 1.02,
+            marginTop: 24,
           }}
         >
-          {first}&nbsp;
+          <span style={{ color: "#2F4D1F", fontWeight: 600 }}>{first}</span>
           <span style={{ color: "#A37A00", fontStyle: "italic" }}>{rest.join(" ")}</span>
         </div>
         <div

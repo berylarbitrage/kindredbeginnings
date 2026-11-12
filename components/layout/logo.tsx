@@ -7,16 +7,19 @@ export function Logo({ showSubtitle = true }: { showSubtitle?: boolean }) {
   return (
     <Link
       href="/"
-      className="group flex items-center gap-2.5 rounded-sm"
+      className="group flex items-center gap-2 rounded-sm"
       aria-label={`${SITE.brand} home`}
     >
-      <LogoMark className="h-10 w-9 shrink-0 transition-transform duration-500 group-hover:-rotate-3" />
+      <LogoMark className="h-12 w-14 shrink-0 transition-transform duration-500 group-hover:-rotate-3 sm:h-14 sm:w-16" />
       <span className="flex flex-col leading-none">
-        <span className="text-primary font-serif text-[1.55rem] leading-none font-medium tracking-tight">
-          {first} <span className="text-lemon-ink font-medium italic">{rest.join(" ")}</span>
+        <span className="text-primary font-serif text-[1.3rem] leading-[1.05] font-semibold tracking-tight">
+          {first}
+        </span>
+        <span className="text-lemon-ink font-serif text-[1.3rem] leading-[1.05] font-medium tracking-tight italic">
+          {rest.join(" ")}
         </span>
         {showSubtitle && (
-          <span className="text-muted mt-1 hidden text-[0.62rem] font-medium tracking-[0.24em] uppercase sm:block">
+          <span className="text-muted mt-1 hidden text-[0.58rem] font-medium tracking-[0.22em] uppercase sm:block">
             {SITE.subtitle}
           </span>
         )}
