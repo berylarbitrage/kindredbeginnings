@@ -45,7 +45,7 @@ const JOURNAL = [
   {
     art: BlossomSketch,
     title: "A coordinator who knows your name",
-    body: "One real person, from your very first question to the end of the journey — someone you can simply call or write to.",
+    body: "One real person, from your very first question to the end of the journey — someone you can simply message or write to.",
   },
   {
     art: LemonSlice,
@@ -223,12 +223,14 @@ export default function HomePage() {
                 href: "/egg-donor",
                 who: "For egg donors",
                 amount: SITE.eggComp,
+                details: SITE.eggCompTiers as readonly string[],
                 art: <LemonIcon className="mx-auto size-14" />,
               },
               {
                 href: "/sperm-donor",
                 who: "For sperm donors",
                 amount: spermComp,
+                details: [SITE.spermCompNote] as readonly string[],
                 art: <Leaf className="text-leaf mx-auto size-12" />,
               },
             ].map((c) => (
@@ -251,6 +253,11 @@ export default function HomePage() {
                 >
                   {c.amount}
                 </p>
+                <ul className="text-muted mt-4 space-y-1 text-sm">
+                  {c.details.map((d) => (
+                    <li key={d}>{d}</li>
+                  ))}
+                </ul>
                 <p className="text-accent mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold underline decoration-1 underline-offset-4">
                   Read the chapter
                   <ArrowRight className="size-4 transition group-hover:translate-x-1" aria-hidden />

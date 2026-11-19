@@ -22,12 +22,6 @@ export function Footer() {
               <a className="link-underline inline-block py-2" href={`mailto:${SITE.contactEmail}`}>
                 {SITE.contactEmail}
               </a>
-              <a
-                className="link-underline inline-block py-2"
-                href={`tel:${SITE.contactPhone.replace(/\D/g, "")}`}
-              >
-                {SITE.contactPhone}
-              </a>
             </p>
             <p className="text-muted text-sm">{SITE.serviceArea}</p>
           </div>
