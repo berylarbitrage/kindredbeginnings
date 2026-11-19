@@ -13,9 +13,10 @@ describe("sender address", () => {
     expect(emailFrom()).toBe("Kindred Beginnings <hello@kindredbeginnings.com>");
     expect(emailFromDomain()).toBe("kindredbeginnings.com");
   });
-  it("keeps an explicit display name", () => {
-    process.env.EMAIL_FROM = "KB Team <team@mail.kindredbeginnings.com>";
-    expect(emailFrom()).toBe("KB Team <team@mail.kindredbeginnings.com>");
+  it("uses the brand as display name even when EMAIL_FROM has one", () => {
+    process.env.EMAIL_FROM = "Preview <team@mail.kindredbeginnings.com>";
+    // The display name is always the brand (e.g. a preview env set "Preview").
+    expect(emailFrom()).toBe("Kindred Beginnings <team@mail.kindredbeginnings.com>");
     expect(emailFromDomain()).toBe("mail.kindredbeginnings.com");
   });
   it("falls back to the Resend test sender", () => {
