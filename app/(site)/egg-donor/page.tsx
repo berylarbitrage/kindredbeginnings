@@ -29,6 +29,19 @@ export default function EggDonorPage() {
         ],
         comp: {
           amount: SITE.eggComp,
+          note: (
+            <>
+              {SITE.eggCompTiers.map((t) => (
+                <span key={t} className="block">
+                  {t}
+                </span>
+              ))}
+              <span className="mt-2 block">
+                It is paid for your time, effort and commitment, and the exact amount depends on how
+                you&apos;re matched.
+              </span>
+            </>
+          ),
           covered: [
             "All medical screening, medication and procedures",
             "Travel and accommodation, if needed",

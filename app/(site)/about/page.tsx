@@ -26,7 +26,7 @@ const BELIEFS = [
   },
   {
     title: "A real person beside you.",
-    body: "Every donor has a dedicated coordinator — someone you can simply call or text.",
+    body: "Every donor has a dedicated coordinator — someone you can message or email anytime.",
   },
 ];
 
