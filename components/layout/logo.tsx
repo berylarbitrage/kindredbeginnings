@@ -11,7 +11,7 @@ export function Logo({ showSubtitle = true }: { showSubtitle?: boolean }) {
       aria-label={`${SITE.brand} home`}
     >
       <LogoMark className="h-12 w-14 shrink-0 transition-transform duration-500 group-hover:-rotate-3 sm:h-14 sm:w-16" />
-      <span className="flex flex-col leading-none">
+      <span className="notranslate flex flex-col leading-none" translate="no">
         <span className="text-primary font-serif text-[1.3rem] leading-[1.05] font-semibold tracking-tight">
           {first}
         </span>

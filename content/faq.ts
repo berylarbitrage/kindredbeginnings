@@ -21,7 +21,7 @@ export const FAQ: Record<FaqGroup, { title: string; items: FaqItem[] }> = {
       },
       {
         q: "And once I've sent the pre-screen?",
-        a: "You'll see your first result straight away. If you pre-qualify, you can carry on into the full application right there on our website. Each step is saved as you go, and we'll also email you a link, so you can always find your way back. A coordinator will be in touch after that.",
+        a: "A real person on our team reads every pre-screen, usually within a few business days. If it feels like a good fit, we'll email you a link to create your password and carry on into the full application on our website — each step is saved as you go. A coordinator will be in touch after that.",
       },
       {
         q: "Who are you, exactly?",
