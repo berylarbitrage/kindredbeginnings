@@ -32,7 +32,7 @@ const UNFOLDS = [
     body: "Finish your application at your own pace, then meet the coordinator who will stay beside you.",
   },
   {
-    title: "Meet a family",
+    title: "Get matched",
     body: "We introduce your profile to intended parents; screening follows at a partner clinic.",
   },
   {
