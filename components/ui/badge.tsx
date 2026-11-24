@@ -5,7 +5,7 @@ const tones = {
   neutral: "bg-muted-bg text-foreground",
   success: "bg-primary-soft text-leaf-deep",
   warn: "bg-accent-soft text-[#6b5000]",
-  danger: "bg-destructive/10 text-destructive",
+  danger: "bg-destructive-soft text-destructive",
 } as const;
 
 export function Badge({

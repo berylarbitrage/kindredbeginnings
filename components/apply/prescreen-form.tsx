@@ -1062,7 +1062,7 @@ export function PrescreenForm({
         )}
 
         {serverError && (
-          <p role="alert" className="bg-destructive/10 text-destructive rounded-lg p-3 text-sm">
+          <p role="alert" className="bg-destructive-soft text-destructive rounded-lg p-3 text-sm">
             {serverError}
           </p>
         )}
